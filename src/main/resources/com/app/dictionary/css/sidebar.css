@@ -1,0 +1,15 @@
+.sidebutton {
+    -fx-background-radius: 0;
+    -fx-background-color: #808080;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+}
+.sidebutton:hover {
+    -fx-background-color: red;
+}
+
+
+
+.topborderPane {
+    -fx-background-color: #c0c0c0;
+}
