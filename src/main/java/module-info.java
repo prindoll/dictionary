@@ -7,6 +7,9 @@ module com.app.dictionary {
     requires com.google.api.services.translate;
     requires com.google.api.client.json.jackson2;
     requires com.google.api.client;
+    requires voicerss.tts;
+    requires javafx.media;
+    requires java.desktop;
 
 
     opens com.app.dictionary to javafx.fxml;

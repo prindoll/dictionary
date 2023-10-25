@@ -9,8 +9,14 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.dictionary.ApiController">
    <children>
-      <TextArea fx:id="text1" layoutX="36.0" layoutY="144.0" prefHeight="200.0" prefWidth="363.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="210.0" />
-      <TextArea fx:id="text2" layoutX="467.0" layoutY="211.0" prefHeight="200.0" prefWidth="363.0" AnchorPane.bottomAnchor="200.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="210.0" />
+      <TextArea fx:id="text1" layoutX="36.0" layoutY="144.0" prefHeight="200.0" prefWidth="363.0" wrapText="true" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="210.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+      <TextArea fx:id="text2" layoutX="467.0" layoutY="211.0" prefHeight="200.0" prefWidth="363.0" wrapText="true" AnchorPane.bottomAnchor="200.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="210.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
       <HBox layoutX="60.0" layoutY="170.0" prefHeight="30.0" prefWidth="363.0">
          <children>
             <Button fx:id="english1" mnemonicParsing="false" prefHeight="30.0" prefWidth="98.0" text="English" />

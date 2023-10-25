@@ -54,15 +54,17 @@ public class ApiController implements Initializable {
 
 
     private static final String ENGLISH = "en";
-    private static final String VIETNAMESE = "vn";
-    private static final String CHINESE = "cn";
-    private static final String JAPANESE = "jp";
-    private String tmp1 = null;
-    private String tmp2 = null;
+    private static final String VIETNAMESE = "vi";
+    private static final String CHINESE = "ch";
+    private static final String JAPANESE = "ja";
+    private String tmp1 = "en";
+    private String tmp2 = "vi";
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        choose1.setText("English");
+        choose2.setText("Vietnamese");
         vietnamese1.setOnAction(event -> {
             choose1.setText("Vietnamese");
             tmp1 = VIETNAMESE;
@@ -97,9 +99,10 @@ public class ApiController implements Initializable {
         });
         translate.setOnAction(event -> {
             String text = text1.getText();
+            System.out.println(text);
             String res = null;
             try {
-                res = Translator.translate( "en", "vn", text);
+                res = Translator.translate( tmp1, tmp2, text);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
