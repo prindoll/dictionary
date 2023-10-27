@@ -111,12 +111,5 @@ public class ApiController extends MainController implements Initializable {
             }
             text2.setText(res);
         });
-        voice.setOnAction(event -> {
-            try {
-                Voicerss.speakWord("Hiep tam ngu");
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        });
     }
 }

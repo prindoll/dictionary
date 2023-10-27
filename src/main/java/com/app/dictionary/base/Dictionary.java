@@ -16,7 +16,7 @@ public class Dictionary {
     private Map<String, Word> dataVietnamese = new HashMap<>();
 
 
-    public void loadData() throws IOException {
+    public void loadDataE() throws IOException {
         FileReader fileReaderEn = new FileReader(DATA_ENG);
         BufferedReader en = new BufferedReader(fileReaderEn);
         String tmp;
@@ -27,9 +27,11 @@ public class Dictionary {
             Word wordObj = new Word(word, definition);
             dataEnglish.put(word, wordObj);
         }
-        tmp = "";
+    }
+    public void loadDataV() throws IOException {
         FileReader fileReaderVn = new FileReader(DATA_VN);
         BufferedReader vn = new BufferedReader(fileReaderVn);
+        String tmp;
         while ((tmp = vn.readLine()) != null) {
             String[] parts = tmp.split(SPLITTING_CHARACTERS);
             String word = parts[0];
@@ -39,19 +41,17 @@ public class Dictionary {
         }
     }
 
+
     public Map<String, Word> getMapEnglish() {
         return this.dataEnglish;
     }
     public Map<String, Word> getMapVietnamese(){return this.dataVietnamese;}
 
-    public static void main(String[] args) {
-        Dictionary dictionary = new Dictionary();
-        try {
-            dictionary.loadData();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(dictionary.dataEnglish.size());
+    public void freeMap() {
+        this.dataVietnamese = null;
+        this.dataEnglish = null;
     }
+
+
 
 }

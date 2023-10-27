@@ -5,6 +5,7 @@ import com.app.dictionary.base.Voicerss;
 import com.app.dictionary.base.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -12,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
@@ -29,33 +31,24 @@ public class HomeController extends MainController implements Initializable {
     private AnchorPane homeAnchorPane;
     @FXML
     private ImageView buttonDelete;
-
     @FXML
     private Label labelText;
-
     @FXML
     private ListView<String> listSearch;
-
     @FXML
     private TextField searchText;
     @FXML
     private Button clear;
-
     @FXML
     private WebView webSearch;
-
-    private Map<String, Word> dataE;
-    private Map<String, Word> dataV;
-    private Map<String, Word> data;
+    private static Map<String, Word> data;
+    private static Map<String, Word> dataE;
+    private static Map<String, Word> dataV;
 
     private Dictionary dictionary = new Dictionary();
-
-    private ObservableList<String> allItemsE = FXCollections.observableArrayList();
-    private ObservableList<String> allItemsV = FXCollections.observableArrayList();
-    private ObservableList<String> allItems = FXCollections.observableArrayList();
-
-    private ObservableList<String> searchE = FXCollections.observableArrayList();
-    private ObservableList<String> searchV = FXCollections.observableArrayList();
+    private static ObservableList<String> allItems = FXCollections.observableArrayList();
+    private ObservableList<String> bookMarkE = FXCollections.observableArrayList();
+    private ObservableList<String> bookMarkV = FXCollections.observableArrayList();
     @FXML
     private Button buttonE;
     @FXML
@@ -68,20 +61,40 @@ public class HomeController extends MainController implements Initializable {
     private Button us;
     @FXML
     private Button uk;
+    @FXML
+    private Button vie;
+    @FXML
+    private HBox us_;
+    @FXML
+    private HBox uk_;
+    @FXML
+    private HBox vie_;
 
-
-
-    public void loadDatainMap() throws IOException {
-        dictionary.loadData();
-        dataE = dictionary.getMapEnglish();
-        dataV = dictionary.getMapVietnamese();
-        allItemsE.setAll(dataE.keySet());
-        allItemsV.setAll(dataV.keySet());
-        Collections.sort(allItemsE);
-        Collections.sort(allItemsV);
+    public static void clearAll() {
+        data = null;
+        dataE = null;
+        dataV = null;
+        allItems = null;
     }
 
-    public void checkSearchE() {
+    public void loadMap() {
+        try {
+            dictionary.loadDataE();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            dictionary.loadDataV();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        dataE = dictionary.getMapEnglish();
+        dataV = dictionary.getMapVietnamese();
+        dictionary.freeMap();
+    }
+
+
+    public void checkSearch() {
         this.searchText.textProperty().addListener((observable, oldValue, newValue) -> {
             ObservableList<String> tmpItems = FXCollections.observableArrayList();
             if (newValue != null) {
@@ -95,7 +108,8 @@ public class HomeController extends MainController implements Initializable {
         });
     }
 
-    public void initWebViewE() {
+
+    public void initWebView() {
         this.listSearch.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> {
                     if (newValue != null) {
@@ -133,50 +147,81 @@ public class HomeController extends MainController implements Initializable {
             }
         });
     }
+    public void checkButtonE(ActionEvent e) {
+        data = dataV;
+        allItems.setAll(data.keySet());
+        Collections.sort(allItems);
+        buttonV.setVisible(true);
+        imgV.setVisible(true);
+        buttonE.setVisible(false);
+        imgE.setVisible(false);
+        listSearch.setItems(allItems);
+        us_.setVisible(false);
+        uk_.setVisible(false);
+        vie_.setVisible(true);
+    }
+    public void checkButtonV(ActionEvent e) {
+        data = dataE;
+        allItems.setAll(data.keySet());
+        Collections.sort(allItems);
+        imgV.setVisible(false);
+        imgE.setVisible(true);
+        buttonE.setVisible(true);
+        buttonV.setVisible(false);
+        listSearch.setItems(allItems);
+        us_.setVisible(true);
+        uk_.setVisible(true);
+        vie_.setVisible(false);
+    }
 
-
+    public void initialization() {
+        data = dataE;
+        allItems.setAll(data.keySet());
+        Collections.sort(allItems);
+        imgV.setVisible(false);
+        imgE.setVisible(true);
+        buttonE.setVisible(true);
+        buttonV.setVisible(false);
+        listSearch.setItems(allItems);
+        us_.setVisible(true);
+        uk_.setVisible(true);
+        vie_.setVisible(false);
+        labelText.setText("Hãy search từ đi nào bé");
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        buttonV.setVisible(false);
-        imgV.setVisible(false);
-        data = dictionary.getMapEnglish();
-        allItems = allItemsE;
-        listSearch.setItems(allItems);
-        try {
-            this.loadDatainMap();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        this.loadMap();
+        this.initialization();
         this.setColorListView();
-        buttonE.setOnMouseClicked(event -> {
-            data = dictionary.getMapVietnamese();
-            allItems = allItemsV;
-            buttonV.setVisible(true);
-            imgV.setVisible(true);
-            buttonE.setVisible(false);
-            imgE.setVisible(false);
-            listSearch.setItems(allItems);
-        });
-        buttonV.setOnMouseClicked(event -> {
-            data = data = dictionary.getMapEnglish();
-            allItems = allItemsE;
-            imgV.setVisible(false);
-            imgE.setVisible(true);
-            buttonE.setVisible(true);
-            buttonV.setVisible(false);
-            listSearch.setItems(allItems);
-        });
-        this.checkSearchE();
-        this.initWebViewE();
-        uk.setOnAction(event -> {
-            String s = labelText.getText();
+        this.checkSearch();
+        this.initWebView();
+        us.setOnAction(event -> {
+            Voicerss.Name = "Linda";
+            Voicerss.language = "en-us";
             try {
-                Voicerss.speakWord(s);
+                Voicerss.speakWord(labelText.getText());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         });
-
+        uk.setOnAction(event -> {
+            Voicerss.Name = "Alice";
+            Voicerss.language = "en-gb";
+            try {
+                Voicerss.speakWord(labelText.getText());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+        vie.setOnAction(event -> {
+            Voicerss.Name = "Chi";
+            Voicerss.language = "vi-vn";
+            try {
+                Voicerss.speakWord(labelText.getText());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }
