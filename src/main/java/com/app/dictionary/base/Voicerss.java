@@ -38,7 +38,9 @@ public class Voicerss {
         fos.close();
         File file = new File(AUDIO_PATH);
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
-        Clip clip = AudioSystem.getClip();
+        DataLine.Info info = new DataLine.Info(Clip.class, audioInputStream.getFormat());
+        Clip clip = (Clip) AudioSystem.getLine(info);
+        clip.open(audioInputStream);
         clip.start();
     }
 

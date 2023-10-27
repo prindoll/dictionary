@@ -24,6 +24,8 @@ public class MainController implements Initializable {
 
     @FXML
     private Button bookmakeButton;
+    @FXML
+    private AnchorPane centerAnchorPane;
 
     @FXML
     private Button button;
@@ -41,20 +43,53 @@ public class MainController implements Initializable {
     private Button homeButton;
 
     @FXML
-    private BorderPane myBorderPane;
+    protected BorderPane myBorderPane;
 
     @FXML
-    private AnchorPane sidebar;
+    protected AnchorPane sidebar;
     @FXML
-    private AnchorPane homeController;
+    protected AnchorPane homeController;
     @FXML
-    private AnchorPane historyController;
+    protected AnchorPane historyController;
     @FXML
-    private AnchorPane bookmarkController;
+    protected AnchorPane bookmarkController;
     @FXML
-    private AnchorPane apiController;
+    protected AnchorPane apiController;
     @FXML
-    private AnchorPane gameController;
+    protected AnchorPane gameController;
+
+    public void setAnchorPane() {
+        try {
+            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/home.fxml"));
+            homeController = file.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        try {
+//            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/bookmark.fxml"));
+//            bookmarkController = file.load();
+//        } catch(IOException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/history.fxml"));
+//            historyButton = file.load();
+//        } catch(IOException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/game.fxml"));
+//            gameController = file.load();
+//        } catch(IOException e) {
+//            e.printStackTrace();
+//        }
+        try {
+            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/api.fxml"));
+            apiController = file.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -88,6 +123,7 @@ public class MainController implements Initializable {
                 buttonClose.setVisible(false);
             });
         });
+        setAnchorPane();
 
         // Cai nay khong can quan tam dau them vao cho dep
         buttonClose.setCursor(Cursor.HAND);
@@ -98,38 +134,6 @@ public class MainController implements Initializable {
         apiButton.setCursor(Cursor.HAND);
         gameButton.setCursor(Cursor.HAND);
 
-        // Cai nay la set man hinh giua cai borderPane ne
-        try {
-            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/home.fxml"));
-            homeController = file.load();
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-//        try {
-//            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/bookmark.fxml"));
-//            bookmarkController = file.load();
-//        } catch(IOException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/history.fxml"));
-//            historyButton = file.load();
-//        } catch(IOException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/game.fxml"));
-//            gameController = file.load();
-//        } catch(IOException e) {
-//            e.printStackTrace();
-//        }
-        try {
-            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/api.fxml"));
-            apiController = file.load();
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-        //Xu ly su kien thay doi setCenter ne
 
         homeButton.setOnAction(event -> {
             myBorderPane.setCenter(null);
@@ -151,6 +155,7 @@ public class MainController implements Initializable {
             myBorderPane.setCenter(null);
             myBorderPane.setCenter(gameController);
         });
+        myBorderPane.setCenter(homeController);
 
     }
 }

@@ -44,4 +44,14 @@ public class Dictionary {
     }
     public Map<String, Word> getMapVietnamese(){return this.dataVietnamese;}
 
+    public static void main(String[] args) {
+        Dictionary dictionary = new Dictionary();
+        try {
+            dictionary.loadData();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(dictionary.dataEnglish.size());
+    }
+
 }

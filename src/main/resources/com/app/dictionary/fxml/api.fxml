@@ -41,5 +41,6 @@
          </font>
       </Label>
       <Button fx:id="translate" layoutX="377.0" layoutY="418.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Translate" />
+      <Button fx:id="voice" layoutX="390.0" layoutY="519.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

@@ -54,7 +54,7 @@
       </AnchorPane>
    </top>
    <left>
-      <AnchorPane fx:id="sidebar" prefHeight="540.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="sidebar" prefHeight="540.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -153,4 +153,7 @@
          </children>
       </AnchorPane>
    </left>
+   <center>
+      <AnchorPane fx:id="centerAnchorPane" prefHeight="600.0" prefWidth="850.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>

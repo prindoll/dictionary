@@ -1,6 +1,7 @@
 package com.app.dictionary;
 
 import com.app.dictionary.base.Translator;
+import com.app.dictionary.base.Voicerss;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -11,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ApiController implements Initializable {
+public class ApiController extends MainController implements Initializable {
 
     @FXML
     private Button chinese1;
@@ -51,6 +52,8 @@ public class ApiController implements Initializable {
 
     @FXML
     private Button vietnamese2;
+    @FXML
+    private Button voice;
 
 
     private static final String ENGLISH = "en";
@@ -107,6 +110,13 @@ public class ApiController implements Initializable {
                 throw new RuntimeException(e);
             }
             text2.setText(res);
+        });
+        voice.setOnAction(event -> {
+            try {
+                Voicerss.speakWord("Hiep tam ngu");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         });
     }
 }

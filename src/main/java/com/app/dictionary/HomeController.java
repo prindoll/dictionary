@@ -1,6 +1,7 @@
 package com.app.dictionary;
 
 import com.app.dictionary.base.Dictionary;
+import com.app.dictionary.base.Voicerss;
 import com.app.dictionary.base.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
@@ -21,8 +23,10 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class HomeController implements Initializable {
+public class HomeController extends MainController implements Initializable {
 
+    @FXML
+    private AnchorPane homeAnchorPane;
     @FXML
     private ImageView buttonDelete;
 
@@ -60,6 +64,10 @@ public class HomeController implements Initializable {
     private ImageView imgV;
     @FXML
     private ImageView imgE;
+    @FXML
+    private Button us;
+    @FXML
+    private Button uk;
 
 
 
@@ -134,6 +142,7 @@ public class HomeController implements Initializable {
         imgV.setVisible(false);
         data = dictionary.getMapEnglish();
         allItems = allItemsE;
+        listSearch.setItems(allItems);
         try {
             this.loadDatainMap();
         } catch (IOException e) {
@@ -147,6 +156,7 @@ public class HomeController implements Initializable {
             imgV.setVisible(true);
             buttonE.setVisible(false);
             imgE.setVisible(false);
+            listSearch.setItems(allItems);
         });
         buttonV.setOnMouseClicked(event -> {
             data = data = dictionary.getMapEnglish();
@@ -155,10 +165,18 @@ public class HomeController implements Initializable {
             imgE.setVisible(true);
             buttonE.setVisible(true);
             buttonV.setVisible(false);
+            listSearch.setItems(allItems);
         });
-            this.checkSearchE();
-            this.initWebViewE();
-
+        this.checkSearchE();
+        this.initWebViewE();
+        uk.setOnAction(event -> {
+            String s = labelText.getText();
+            try {
+                Voicerss.speakWord(s);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
 
     }
 }
