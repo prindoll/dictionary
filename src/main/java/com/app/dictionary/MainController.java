@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 public class MainController implements Initializable {
-
     private static final String COLOR_RED_CSS = "-fx-background-color: red;";
     private static final String COLOR_GRAY_CSS = "-fx-background-color: #808080;";
     @FXML
@@ -122,7 +121,6 @@ public class MainController implements Initializable {
     public void setCenterAnchorPaneApi() {
         myBorderPane.setCenter(null);
         myBorderPane.setCenter(apiController);
-        HomeController.clearAll();
     }
 
     public void setCenterAnchorPaneGame() {

@@ -3,6 +3,7 @@ package com.app.dictionary;
 import com.app.dictionary.base.Dictionary;
 import com.app.dictionary.base.Voicerss;
 import com.app.dictionary.base.Word;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,8 +16,10 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.web.HTMLEditor;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -69,13 +72,14 @@ public class HomeController extends MainController implements Initializable {
     private HBox uk_;
     @FXML
     private HBox vie_;
+    @FXML
+    private AnchorPane insertAnchorPane;
+    @FXML
+    private TextField addWord;
+    @FXML
+    private HTMLEditor htmlText;
 
-    public static void clearAll() {
-        data = null;
-        dataE = null;
-        dataV = null;
-        allItems = null;
-    }
+
 
     public void loadMap() {
         try {
@@ -186,11 +190,73 @@ public class HomeController extends MainController implements Initializable {
         us_.setVisible(true);
         uk_.setVisible(true);
         vie_.setVisible(false);
-        labelText.setText("Hãy search từ đi nào bé");
+        labelText.setText("I love Gwen bro :))");
     }
+
+    //Xu ly them tu
+    public void addE_V() {
+        String word = addWord.getText();
+        String def = htmlText.getHtmlText();
+        Word newWord = new Word(word, def);
+        if(!dataE.containsKey(word)) {
+            dataE.put(word, newWord);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Đã thêm từ");
+            alert.showAndWait();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Từ đã có");
+            alert.showAndWait();
+        }
+    }
+    public void addV_E() {
+        String word = addWord.getText();
+        String def = htmlText.getHtmlText();
+        Word newWord = new Word(word, def);
+        if(!dataV.containsKey(word)) {
+            dataV.put(word, newWord);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Đã thêm từ");
+            alert.showAndWait();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Từ đã có");
+            alert.showAndWait();
+        }
+    }
+    public void reset() {
+        htmlText.setHtmlText("<html>" + addWord.getText() + " /" +  "cách đọc" + "/"
+                + "<ul><li><b><i> loại từ: </i></b><ul><li><font color='#cc0000'><b> Nghĩa:" +
+                "</b></font><ul></li></ul></ul></li></ul><ul><li><b><i>loại từ</i></b><ul><li>" +
+                "<font color='#cc0000'><b> Nghĩa: </b></font></li></ul></li></ul></html>");
+    }
+    public void hideInsert() {
+        TranslateTransition slide = new TranslateTransition();
+        slide.setDuration(Duration.seconds(1));
+        slide.setNode(insertAnchorPane);
+        slide.setToX(850);
+        slide.play();
+        insertAnchorPane.setTranslateX(0);
+        slide.setOnFinished((ActionEvent event) -> {
+            insertAnchorPane.setVisible(false);
+        });
+    }
+    public void visibleInsert() {
+        insertAnchorPane.setVisible(true);
+        TranslateTransition slide = new TranslateTransition();
+        slide.setDuration(Duration.seconds(1));
+        slide.setNode(insertAnchorPane);
+        slide.setToX(0);
+        slide.play();
+        insertAnchorPane.setTranslateX(850);
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        insertAnchorPane.setTranslateX(850);
         this.loadMap();
         this.initialization();
         this.setColorListView();
