@@ -19,9 +19,9 @@ import static javafx.scene.Cursor.*;
 
 public class GameController extends MainController implements Initializable {
     @FXML
-    protected AnchorPane gameMainPane; // cai nay la cai boc ben ngoai dung de set các fxml khac ne
+    protected AnchorPane gameMainPane;
     @FXML
-    private AnchorPane gameAnchorPane;
+    protected AnchorPane gameAnchorPane;
     @FXML
     private Label label;
     @FXML
@@ -29,9 +29,9 @@ public class GameController extends MainController implements Initializable {
     @FXML
     private Button game1, game2;
     @FXML
-    protected AnchorPane game1Controller; // cai nay la hangman dung khong
+    protected AnchorPane game1Controller;
 
-    public void setCursorHand() {
+    public void setCursorHand()  {
         game1.setCursor(HAND);
         game2.setCursor(HAND);
     }
@@ -45,7 +45,12 @@ public class GameController extends MainController implements Initializable {
         }
     }
     public void playHangman() {
-        gameMainPane.getChildren().setAll(game1Controller); // cai them vao ne
+        gameMainPane.getChildren().setAll(game1Controller);
+    }
+
+    public void QuitGame() {
+        if (gameMainPane==null) System.out.println("null");
+        else gameMainPane.getChildren().setAll(gameAnchorPane);
     }
 
     @Override

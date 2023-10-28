@@ -129,11 +129,6 @@ public class MainController implements Initializable {
         myBorderPane.setCenter(gameController);
     }
 
-    public void setCenterGame(AnchorPane game_nController) {
-        this.myBorderPane.setCenter(null);
-        this.myBorderPane.setCenter(game_nController);
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sidebar.setTranslateX(0);
