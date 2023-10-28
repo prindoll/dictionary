@@ -45,6 +45,6 @@ public class Voicerss {
     }
 
     public static void main(String[] args) throws Exception {
-        speakWord("I like you");
+        speakWord(" I like you I like you I like you I like you I like you");
     }
 }

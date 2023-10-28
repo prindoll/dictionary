@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 public class MainController implements Initializable {
+
     private static final String COLOR_RED_CSS = "-fx-background-color: red;";
     private static final String COLOR_GRAY_CSS = "-fx-background-color: #808080;";
     @FXML
@@ -57,12 +58,12 @@ public class MainController implements Initializable {
 //        } catch(IOException e) {
 //            e.printStackTrace();
 //        }
-//        try {
-//            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/game.fxml"));
-//            gameController = file.load();
-//        } catch(IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/game.fxml"));
+            gameController = file.load();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
         try {
             FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/api.fxml"));
             apiController = file.load();
@@ -126,6 +127,11 @@ public class MainController implements Initializable {
     public void setCenterAnchorPaneGame() {
         myBorderPane.setCenter(null);
         myBorderPane.setCenter(gameController);
+    }
+
+    public void setCenterGame(AnchorPane game_nController) {
+        this.myBorderPane.setCenter(null);
+        this.myBorderPane.setCenter(game_nController);
     }
 
     @Override
