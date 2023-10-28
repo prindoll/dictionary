@@ -19,6 +19,8 @@ import static javafx.scene.Cursor.*;
 
 public class GameController extends MainController implements Initializable {
     @FXML
+    protected AnchorPane gameMainPane; // cai nay la cai boc ben ngoai dung de set các fxml khac ne
+    @FXML
     private AnchorPane gameAnchorPane;
     @FXML
     private Label label;
@@ -27,7 +29,7 @@ public class GameController extends MainController implements Initializable {
     @FXML
     private Button game1, game2;
     @FXML
-    protected AnchorPane game1Controller;
+    protected AnchorPane game1Controller; // cai nay la hangman dung khong
 
     public void setCursorHand() {
         game1.setCursor(HAND);
@@ -43,7 +45,7 @@ public class GameController extends MainController implements Initializable {
         }
     }
     public void playHangman() {
-        setCenterGame(game1Controller);
+        gameMainPane.getChildren().setAll(game1Controller); // cai them vao ne
     }
 
     @Override

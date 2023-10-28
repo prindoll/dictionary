@@ -1,5 +1,4 @@
 package com.app.dictionary;
-
 import com.app.dictionary.base.Dictionary;
 import com.app.dictionary.base.Voicerss;
 import com.app.dictionary.base.Word;
@@ -20,16 +19,13 @@ import javafx.scene.web.HTMLEditor;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import java.util.ResourceBundle;
-
 public class HomeController extends MainController implements Initializable {
-
     @FXML
     private AnchorPane homeAnchorPane;
     @FXML
@@ -47,7 +43,6 @@ public class HomeController extends MainController implements Initializable {
     private static Map<String, Word> data;
     private static Map<String, Word> dataE;
     private static Map<String, Word> dataV;
-
     private Dictionary dictionary = new Dictionary();
     private static ObservableList<String> allItems = FXCollections.observableArrayList();
     private ObservableList<String> bookMarkE = FXCollections.observableArrayList();
@@ -78,9 +73,6 @@ public class HomeController extends MainController implements Initializable {
     private TextField addWord;
     @FXML
     private HTMLEditor htmlText;
-
-
-
     public void loadMap() {
         try {
             dictionary.loadDataE();
@@ -252,8 +244,6 @@ public class HomeController extends MainController implements Initializable {
         slide.play();
         insertAnchorPane.setTranslateX(850);
     }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         insertAnchorPane.setTranslateX(850);

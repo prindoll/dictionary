@@ -7,24 +7,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="gameAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.dictionary.GameController">
+
+<AnchorPane fx:id="gameMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.dictionary.GameController">
    <children>
-      <Label fx:id="label" layoutX="121.0" layoutY="35.0" prefHeight="63.0" prefWidth="412.0" text="Giải trí sau khi học tiếng anh căng thẳng bằng cách học tiếng anh">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="game1Image" fitHeight="150.0" fitWidth="258.0" layoutX="68.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/hangman.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="game2Image" fitHeight="145.0" fitWidth="246.0" layoutX="350.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/ioe.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="game1" layoutX="150.0" layoutY="274.0" mnemonicParsing="false" onAction="#playHangman" prefHeight="36.0" prefWidth="94.0" text="HANGMAN" textFill="#540d3f" />
-      <Button fx:id="game2" layoutX="427.0" layoutY="274.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" text="Gấu tìm cứt" />
+      <AnchorPane fx:id="gameAnchorPane" layoutX="98.0" layoutY="98.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="653.0">
+         <children>
+            <Label fx:id="label" layoutX="121.0" layoutY="35.0" prefHeight="63.0" prefWidth="412.0" text="Giải trí sau khi học tiếng anh căng thẳng bằng cách học tiếng anh">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="game1Image" fitHeight="150.0" fitWidth="258.0" layoutX="68.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/hangman.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="game2Image" fitHeight="145.0" fitWidth="246.0" layoutX="350.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/ioe.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="game1" layoutX="150.0" layoutY="274.0" mnemonicParsing="false" onAction="#playHangman" prefHeight="36.0" prefWidth="94.0" text="HANGMAN" textFill="#540d3f" />
+            <Button fx:id="game2" layoutX="427.0" layoutY="274.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="83.0" text="Gấu tìm cứt" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
