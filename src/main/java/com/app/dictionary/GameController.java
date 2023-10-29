@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
 
 import java.io.IOException;
@@ -19,43 +20,62 @@ import static javafx.scene.Cursor.*;
 
 public class GameController extends MainController implements Initializable {
     @FXML
-    protected AnchorPane gameMainPane;
+    private AnchorPane centerGame;
+
     @FXML
-    protected AnchorPane gameAnchorPane;
+    private AnchorPane chooseGame;
+
+    @FXML
+    private Button game1;
+
+    @FXML
+    private ImageView game1Image;
+
+    @FXML
+    private Button game2;
+
+    @FXML
+    private ImageView game2Image;
+
+    @FXML
+    private AnchorPane gameMainPane;
+
+    @FXML
+    private HBox hboxGame;
+
     @FXML
     private Label label;
     @FXML
-    private ImageView game1Image, game2Image;
+    private AnchorPane gameHangMan;
     @FXML
-    private Button game1, game2;
-    @FXML
-    protected AnchorPane game1Controller;
+    private AnchorPane game2Controller;
+
 
     public void setCursorHand()  {
         game1.setCursor(HAND);
         game2.setCursor(HAND);
     }
 
-    public void setAcPane(){
+    public void playHangman() {
         try {
             FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/hangman.fxml"));
-            game1Controller = file.load();
+            gameHangMan = file.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        hboxGame.setVisible(true);
+        centerGame.getChildren().setAll(gameHangMan);
     }
-    public void playHangman() {
-        gameMainPane.getChildren().setAll(game1Controller);
+    public void returnGame(){
+        centerGame.getChildren().setAll(chooseGame);
+        hboxGame.setVisible(false);
+        gameHangMan = null;
     }
 
-    public void QuitGame() {
-        if (gameMainPane==null) System.out.println("null");
-        else gameMainPane.getChildren().setAll(gameAnchorPane);
-    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setAcPane();
         setCursorHand();
     }
 }

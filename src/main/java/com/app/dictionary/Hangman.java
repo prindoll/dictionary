@@ -14,8 +14,8 @@ public class Hangman extends GameController implements Initializable {
     @FXML
     private Button exit;
 
-    public void QuitGame() {
-        super.QuitGame();
+
+    public void quit() {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
