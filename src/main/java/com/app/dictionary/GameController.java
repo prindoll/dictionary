@@ -73,7 +73,6 @@ public class GameController extends MainController implements Initializable {
     }
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCursorHand();
