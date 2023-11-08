@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane fx:id="hmAnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.dictionary.BearFindHoney">
    <children>
@@ -250,12 +249,11 @@
                   <Image url="@../img/q.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true">
+            <ImageView fx:id="bear" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true">
                <image>
                   <Image url="@../img/bear.png" />
                </image></ImageView>
          </children>
       </GridPane>
-      <Rectangle fx:id="bear" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="29.0" layoutY="38.0" stroke="BLACK" strokeType="INSIDE" width="80.0" />
    </children>
 </AnchorPane>

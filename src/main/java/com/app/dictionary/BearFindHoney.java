@@ -23,9 +23,9 @@ public class BearFindHoney extends GameController implements Initializable {
     @FXML
     protected AnchorPane hmAnchorPane;
     @FXML
-    private Rectangle bear;
+    private ImageView bear;
 
-    private final Image imgBear = new Image("img/bear.png");
+    private final Image imgBear = new Image(getClass().getResourceAsStream("img/bear.png"));
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         load();
@@ -53,5 +53,5 @@ public class BearFindHoney extends GameController implements Initializable {
         bear.setImage(imgBear);
     }
 
-
 }
+
