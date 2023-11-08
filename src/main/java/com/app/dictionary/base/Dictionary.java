@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Dictionary {
@@ -27,6 +28,8 @@ public class Dictionary {
             Word wordObj = new Word(word, definition);
             dataEnglish.put(word, wordObj);
         }
+        en.close();
+        fileReaderEn.close();
     }
     public void loadDataV() throws IOException {
         FileReader fileReaderVn = new FileReader(DATA_VN);
@@ -39,6 +42,8 @@ public class Dictionary {
             Word wordObj = new Word(word, definition);
             dataVietnamese.put(word, wordObj);
         }
+        vn.close();
+        fileReaderVn.close();
     }
 
 

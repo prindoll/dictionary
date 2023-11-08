@@ -1,7 +1,6 @@
 package com.app.dictionary;
+import com.app.dictionary.base.*;
 import com.app.dictionary.base.Dictionary;
-import com.app.dictionary.base.Voicerss;
-import com.app.dictionary.base.Word;
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,21 +9,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.web.HTMLEditor;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
 import javafx.util.Duration;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
+
 public class HomeController extends MainController implements Initializable {
     @FXML
     private AnchorPane homeAnchorPane;
@@ -45,8 +41,6 @@ public class HomeController extends MainController implements Initializable {
     private static Map<String, Word> dataV;
     private Dictionary dictionary = new Dictionary();
     private static ObservableList<String> allItems = FXCollections.observableArrayList();
-    private ObservableList<String> bookMarkE = FXCollections.observableArrayList();
-    private ObservableList<String> bookMarkV = FXCollections.observableArrayList();
     @FXML
     private Button buttonE;
     @FXML
@@ -73,7 +67,10 @@ public class HomeController extends MainController implements Initializable {
     private TextField addWord;
     @FXML
     private HTMLEditor htmlText;
-    public void loadMap() {
+    @FXML
+    private VBox vbox;
+    private boolean statusEng;
+    public void loadData() {
         try {
             dictionary.loadDataE();
         } catch (IOException e) {
@@ -113,13 +110,37 @@ public class HomeController extends MainController implements Initializable {
                         String definition = selectedWord.getDefination();
                         this.webSearch.getEngine().loadContent(definition, "text/html");
                         this.labelText.setText(newValue);
+                        try {
+                            AddWordToTxt.addHistory(newValue);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
         );
     }
     public void clearSearchE() {
         this.searchText.setText("");
-        listSearch.setItems(null);
+        List<String> list = new ArrayList<>();
+        try {
+            list = AddWordToTxt.hisory();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ObservableList<String> olist = FXCollections.observableArrayList();
+        olist.setAll(list);
+        listSearch.setItems(olist);
+        list.clear();
+    }
+    @FXML
+    public void addBookmark(ActionEvent event) {
+        String tmp = labelText.getText();
+        String s = tmp + data.get(tmp).getDefination();
+        try {
+            AddWordToTxt.addBookmark(s);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void setColorListView() {
@@ -133,6 +154,7 @@ public class HomeController extends MainController implements Initializable {
                         if (item != null) {
                             setText(item);
                             setTextFill(Color.WHITE);
+                            setStyle("-fx-font-size: 13px;");
                             setBackground(new Background(new BackgroundFill(Color.GRAY, null, null)));
                         } else {
                             setText(null);
@@ -146,6 +168,7 @@ public class HomeController extends MainController implements Initializable {
     public void checkButtonE(ActionEvent e) {
         data = dataV;
         allItems.setAll(data.keySet());
+        statusEng = false;
         Collections.sort(allItems);
         buttonV.setVisible(true);
         imgV.setVisible(true);
@@ -159,6 +182,7 @@ public class HomeController extends MainController implements Initializable {
     public void checkButtonV(ActionEvent e) {
         data = dataE;
         allItems.setAll(data.keySet());
+        statusEng = true;
         Collections.sort(allItems);
         imgV.setVisible(false);
         imgE.setVisible(true);
@@ -169,10 +193,10 @@ public class HomeController extends MainController implements Initializable {
         uk_.setVisible(true);
         vie_.setVisible(false);
     }
-
     public void initialization() {
         data = dataE;
         allItems.setAll(data.keySet());
+        statusEng = true;
         Collections.sort(allItems);
         imgV.setVisible(false);
         imgE.setVisible(true);
@@ -182,7 +206,6 @@ public class HomeController extends MainController implements Initializable {
         us_.setVisible(true);
         uk_.setVisible(true);
         vie_.setVisible(false);
-        labelText.setText("I love Gwen bro :))");
     }
 
     //Xu ly them tu
@@ -192,6 +215,7 @@ public class HomeController extends MainController implements Initializable {
         Word newWord = new Word(word, def);
         if(!dataE.containsKey(word)) {
             dataE.put(word, newWord);
+            AddWordToTxt.addE_V(word);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Đã thêm từ");
             alert.showAndWait();
@@ -201,6 +225,7 @@ public class HomeController extends MainController implements Initializable {
             alert.setHeaderText("Từ đã có");
             alert.showAndWait();
         }
+        updateDictionary();
     }
     public void addV_E() {
         String word = addWord.getText();
@@ -208,6 +233,7 @@ public class HomeController extends MainController implements Initializable {
         Word newWord = new Word(word, def);
         if(!dataV.containsKey(word)) {
             dataV.put(word, newWord);
+            AddWordToTxt.addV_E(word);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Đã thêm từ");
             alert.showAndWait();
@@ -216,6 +242,17 @@ public class HomeController extends MainController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Từ đã có");
             alert.showAndWait();
+        }
+        updateDictionary();
+    }
+    public void updateDictionary() {
+        if(statusEng) {
+            data = dataE;
+            allItems.setAll(dataE.keySet());
+        }
+        else {
+            data = dataV;
+            allItems.setAll(dataV.keySet());
         }
     }
     public void reset() {
@@ -244,10 +281,39 @@ public class HomeController extends MainController implements Initializable {
         slide.play();
         insertAnchorPane.setTranslateX(850);
     }
+    public void delete() {
+        String s = labelText.getText();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText("Ban co xoa tu khong");
+        ButtonType buttonTypeOK = new ButtonType("OK");
+        ButtonType buttonTypeCancel = new ButtonType("Hủy bỏ");
+        alert.getButtonTypes().setAll(buttonTypeOK, buttonTypeCancel);
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.get() == buttonTypeOK) {
+            if(statusEng){
+                try {
+                    DeleteWordToTxt.deleteE_V(s);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            else {
+                try {
+                    DeleteWordToTxt.deleteV_E(s);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+        buttonTypeOK = null;
+        buttonTypeOK = null;
+        result = null;
+        alert.close();
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         insertAnchorPane.setTranslateX(850);
-        this.loadMap();
+        this.loadData();
         this.initialization();
         this.setColorListView();
         this.checkSearch();

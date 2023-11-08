@@ -1,5 +1,6 @@
 package com.app.dictionary;
 
+import com.app.dictionary.base.Translator;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +24,7 @@ public class MainController implements Initializable {
     @FXML
     private Button bookmakeButton;
     @FXML
-    private AnchorPane centerAnchorPane;
+    protected AnchorPane center;
     @FXML
     private Button button;
     @FXML
@@ -80,10 +81,15 @@ public class MainController implements Initializable {
         TranslateTransition slide = new TranslateTransition();
         slide.setDuration(Duration.seconds(0.5));
         slide.setNode(sidebar);
-
         slide.setToX(0);
+        TranslateTransition slide2 = new TranslateTransition();
+        slide2.setDuration(Duration.seconds(0.5));
+        slide2.setNode(center);
+        slide2.setToX(0);
         slide.play();
+        slide2.play();
         sidebar.setTranslateX(-200);
+        center.setTranslateX(0);
         slide.setOnFinished((ActionEvent event) -> {
             button.setVisible(false);
             buttonClose.setVisible(true);
@@ -93,10 +99,15 @@ public class MainController implements Initializable {
         TranslateTransition slide = new TranslateTransition();
         slide.setDuration(Duration.seconds(0.5));
         slide.setNode(sidebar);
-
         slide.setToX(-200);
+        TranslateTransition slide2 = new TranslateTransition();
+        slide2.setDuration(Duration.seconds(0.5));
+        slide2.setNode(center);
+        slide2.setToX(-100);
         slide.play();
+        slide2.play();
         sidebar.setTranslateX(0);
+        center.setTranslateX(100);
         slide.setOnFinished((ActionEvent event) -> {
             button.setVisible(true);
             buttonClose.setVisible(false);
@@ -104,23 +115,19 @@ public class MainController implements Initializable {
     }
 
     public void setCenterAnchorPaneHomeButton() {
-        myBorderPane.setCenter(null);
-        myBorderPane.setCenter(homeController);
+        center.getChildren().setAll(homeController);
     }
 
     public void setCenterAnchorPaneBookmark() {
-        myBorderPane.setCenter(null);
-        myBorderPane.setCenter(bookmarkController);
+        center.getChildren().setAll(bookmarkController);
     }
 
     public void setCenterAnchorPaneApi() {
-        myBorderPane.setCenter(null);
-        myBorderPane.setCenter(apiController);
+        center.getChildren().setAll(apiController);
     }
 
     public void setCenterAnchorPaneGame() {
-        myBorderPane.setCenter(null);
-        myBorderPane.setCenter(gameController);
+        center.getChildren().setAll(gameController);
     }
 
     @Override
@@ -129,5 +136,6 @@ public class MainController implements Initializable {
         button.setVisible(false);
         setAnchorPane();
         setCursorHand();
+        setCenterAnchorPaneHomeButton();
     }
 }
