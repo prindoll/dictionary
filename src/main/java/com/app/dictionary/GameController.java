@@ -48,7 +48,7 @@ public class GameController extends MainController implements Initializable {
     @FXML
     private AnchorPane gameHangMan;
     @FXML
-    private AnchorPane game2Controller;
+    private AnchorPane gameBearFindHoney;
 
 
     public void setCursorHand()  {
@@ -66,10 +66,21 @@ public class GameController extends MainController implements Initializable {
         hboxGame.setVisible(true);
         centerGame.getChildren().setAll(gameHangMan);
     }
+    public void playBearFindHoney() {
+        try {
+            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/BearFindHoney.fxml"));
+            gameBearFindHoney = file.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        hboxGame.setVisible(true);
+        centerGame.getChildren().setAll(gameBearFindHoney);
+    }
     public void returnGame(){
         centerGame.getChildren().setAll(chooseGame);
         hboxGame.setVisible(false);
         gameHangMan = null;
+
     }
 
 
@@ -77,4 +88,5 @@ public class GameController extends MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setCursorHand();
     }
+
 }

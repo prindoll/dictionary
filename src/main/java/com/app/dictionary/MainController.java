@@ -52,12 +52,6 @@ public class MainController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        try {
-//            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/bookmark.fxml"));
-//            bookmarkController = file.load();
-//        } catch(IOException e) {
-//            e.printStackTrace();
-//        }
         try {
             FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/game.fxml"));
             gameController = file.load();
