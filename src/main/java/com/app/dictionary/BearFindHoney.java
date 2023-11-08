@@ -53,5 +53,5 @@ public class BearFindHoney extends GameController implements Initializable {
         bear.setImage(imgBear);
     }
 
-    
+
 }
