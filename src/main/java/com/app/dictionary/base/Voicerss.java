@@ -16,9 +16,6 @@ import java.io.InputStream;
 public class Voicerss {
     private static final String API_KEY = "ee1a861047db41e3aed6cca75554a826";
     private static final String AUDIO_PATH = "media/audio.wav";
-
-    public static String voiceNameUS;
-    public static String voiceNameUK;
     public static String language = "en-gb";
     public static String Name = "Linda";
     public static double speed = 1;

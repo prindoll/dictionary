@@ -13,133 +13,133 @@
 <?import javafx.scene.web.WebView?>
 
 <AnchorPane fx:id="homeAnchorPane" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.dictionary.HomeController">
-   <children>
-      <AnchorPane prefHeight="600.0" prefWidth="850.0" style="-fx-background-color: white;">
-         <children>
-            <TextField fx:id="searchText" layoutX="50.0" layoutY="15.0" prefHeight="35.0" prefWidth="227.0" promptText="Tra từ" AnchorPane.bottomAnchor="550.0" AnchorPane.topAnchor="15.0">
-               <font>
-                  <Font size="13.0" />
-               </font></TextField>
-            <Button fx:id="clear" layoutX="241.0" layoutY="20.0" mnemonicParsing="false" onAction="#clearSearchE" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: white;">
-               <graphic>
-                  <ImageView fx:id="buttonDelete" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/exit.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <ListView fx:id="listSearch" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="50.0" layoutY="50.0" pickOnBounds="false" prefHeight="549.0" prefWidth="227.0" scaleShape="false" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" />
-            <Label fx:id="labelText" layoutX="277.0" layoutY="15.0" prefHeight="35.0" prefWidth="277.0" text="Nghĩa của từ" AnchorPane.rightAnchor="283.0" AnchorPane.topAnchor="15.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <WebView fx:id="webSearch" layoutX="277.0" layoutY="93.0" prefHeight="500.0" prefWidth="564.0" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="9.399999999999977" />
-            <Button layoutX="784.0" layoutY="21.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: white;">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/star.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Button fx:id="buttonE" layoutX="8.0" layoutY="12.0" mnemonicParsing="false" onAction="#checkButtonE" prefHeight="54.0" prefWidth="45.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="541.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="805.0" AnchorPane.topAnchor="5.0">
-               <graphic>
-                  <ImageView fx:id="imgE" fitHeight="20.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/eng-viet.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="buttonV" layoutY="6.0" mnemonicParsing="false" onAction="#checkButtonV" prefHeight="54.0" prefWidth="45.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="6.0">
-               <graphic>
-                  <ImageView fx:id="imgV" fitHeight="20.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/viet-eng.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <HBox fx:id="us_" alignment="CENTER_LEFT" layoutX="342.0" layoutY="50.0" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: white;">
-               <children>
-                  <Label fx:id="speaker1Language1" style="-fx-text-fill: red;" styleClass="text-lang-first" text="US" />
-                  <Button fx:id="us" mnemonicParsing="false" prefHeight="22.0" prefWidth="16.0" style="-fx-background-color: white;" styleClass="button-speak" textFill="#8e9297">
-                     <font>
-                        <Font size="7.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/speaker.png" />
-                           </image>
+    <children>
+        <AnchorPane prefHeight="600.0" prefWidth="850.0" style="-fx-background-color: white;">
+            <children>
+                <TextField fx:id="searchText" layoutX="50.0" layoutY="15.0" prefHeight="35.0" prefWidth="227.0" promptText="Tra từ" AnchorPane.bottomAnchor="550.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font size="13.0" />
+                    </font></TextField>
+                <Button fx:id="clear" layoutX="241.0" layoutY="20.0" mnemonicParsing="false" onAction="#clearSearchE" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: white;">
+                    <graphic>
+                        <ImageView fx:id="buttonDelete" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/exit.png" />
+                            </image>
                         </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox fx:id="uk_" alignment="CENTER_LEFT" layoutX="290.0" layoutY="50.0" prefHeight="26.0" prefWidth="45.0">
-               <children>
-                  <Label fx:id="speaker1Language11" style="-fx-text-fill: blue;" text="UK" />
-                  <Button fx:id="uk" mnemonicParsing="false" prefHeight="22.0" prefWidth="16.0" style="-fx-background-color: white;" styleClass="button-speak" textFill="#8e9297">
-                     <font>
-                        <Font size="7.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/speaker.png" />
-                           </image>
+                    </graphic>
+                </Button>
+                <ListView fx:id="listSearch" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="50.0" layoutY="50.0" pickOnBounds="false" prefHeight="549.0" prefWidth="227.0" scaleShape="false" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" />
+                <Label fx:id="labelText" layoutX="277.0" layoutY="15.0" prefHeight="35.0" prefWidth="277.0" text="Nghĩa của từ" AnchorPane.rightAnchor="283.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <WebView fx:id="webSearch" layoutX="277.0" layoutY="93.0" prefHeight="500.0" prefWidth="564.0" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="9.399999999999977" />
+                <Button layoutX="784.0" layoutY="21.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: white;">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/star.png" />
+                            </image>
                         </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox fx:id="vie_" alignment="CENTER_LEFT" layoutX="313.0" layoutY="50.0" prefHeight="26.0" prefWidth="45.0" visible="false">
-               <children>
-                  <Label fx:id="speaker1Language111" style="-fx-text-fill: green;" text="VIE" />
-                  <Button fx:id="vie" mnemonicParsing="false" prefHeight="22.0" prefWidth="16.0" style="-fx-background-color: white;" styleClass="button-speak" textFill="#8e9297">
-                     <font>
-                        <Font size="7.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/speaker.png" />
-                           </image>
+                    </graphic></Button>
+                <Button fx:id="buttonE" layoutX="8.0" layoutY="12.0" mnemonicParsing="false" onAction="#checkButtonE" prefHeight="54.0" prefWidth="45.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="541.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="805.0" AnchorPane.topAnchor="5.0">
+                    <graphic>
+                        <ImageView fx:id="imgE" fitHeight="20.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/eng-viet.png" />
+                            </image>
                         </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </HBox>
-            <Button layoutX="730.0" layoutY="21.0" mnemonicParsing="false" onAction="#visibleInsert" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: white;">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/insert.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <AnchorPane fx:id="insertAnchorPane" prefHeight="600.0" prefWidth="850.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <TextField fx:id="addWord" layoutX="42.0" layoutY="14.0" prefHeight="35.0" prefWidth="227.0" promptText="Từ cần thêm" style="-fx-background-color: white; -fx-border-color: #c0c0c0;" />
-                  <HTMLEditor fx:id="htmlText" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="14.0" layoutY="67.0" prefHeight="521.0" prefWidth="536.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
-                  <Button layoutX="730.0" layoutY="18.0" mnemonicParsing="false" onAction="#addV_E" text="Thêm vào V_E" />
-                  <Button layoutY="13.0" mnemonicParsing="false" onAction="#hideInsert" prefHeight="26.0" prefWidth="36.0" style="-fx-background-color: white;">
-                     <graphic>
-                        <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/return.png" />
-                           </image>
+                    </graphic>
+                </Button>
+                <Button fx:id="buttonV" layoutY="6.0" mnemonicParsing="false" onAction="#checkButtonV" prefHeight="54.0" prefWidth="45.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="6.0">
+                    <graphic>
+                        <ImageView fx:id="imgV" fitHeight="20.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/viet-eng.png" />
+                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button layoutX="621.0" layoutY="18.0" mnemonicParsing="false" onAction="#addE_V" text="Thêm vào E-V" />
-                  <Button layoutX="282.0" layoutY="18.0" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="46.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="Tạo" />
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-   </children>
+                    </graphic>
+                </Button>
+                <HBox fx:id="us_" alignment="CENTER_LEFT" layoutX="342.0" layoutY="50.0" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: white;">
+                    <children>
+                        <Label fx:id="speaker1Language1" style="-fx-text-fill: red;" styleClass="text-lang-first" text="US" />
+                        <Button fx:id="us" mnemonicParsing="false" prefHeight="22.0" prefWidth="16.0" style="-fx-background-color: white;" styleClass="button-speak" textFill="#8e9297">
+                            <font>
+                                <Font size="7.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/speaker.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox fx:id="uk_" alignment="CENTER_LEFT" layoutX="290.0" layoutY="50.0" prefHeight="26.0" prefWidth="45.0">
+                    <children>
+                        <Label fx:id="speaker1Language11" style="-fx-text-fill: blue;" text="UK" />
+                        <Button fx:id="uk" mnemonicParsing="false" prefHeight="22.0" prefWidth="16.0" style="-fx-background-color: white;" styleClass="button-speak" textFill="#8e9297">
+                            <font>
+                                <Font size="7.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/speaker.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox fx:id="vie_" alignment="CENTER_LEFT" layoutX="313.0" layoutY="50.0" prefHeight="26.0" prefWidth="45.0" visible="false">
+                    <children>
+                        <Label fx:id="speaker1Language111" style="-fx-text-fill: green;" text="VIE" />
+                        <Button fx:id="vie" mnemonicParsing="false" prefHeight="22.0" prefWidth="16.0" style="-fx-background-color: white;" styleClass="button-speak" textFill="#8e9297">
+                            <font>
+                                <Font size="7.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="22.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/speaker.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+                <Button layoutX="730.0" layoutY="21.0" mnemonicParsing="false" onAction="#visibleInsert" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: white;">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/insert.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <AnchorPane fx:id="insertAnchorPane" prefHeight="600.0" prefWidth="850.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <TextField fx:id="addWord" layoutX="42.0" layoutY="14.0" prefHeight="35.0" prefWidth="227.0" promptText="Từ cần thêm" style="-fx-background-color: white; -fx-border-color: #c0c0c0;" />
+                        <HTMLEditor fx:id="htmlText" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="14.0" layoutY="67.0" prefHeight="521.0" prefWidth="536.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+                        <Button layoutX="730.0" layoutY="18.0" mnemonicParsing="false" onAction="#addV_E" text="Thêm vào V_E" />
+                        <Button layoutY="13.0" mnemonicParsing="false" onAction="#hideInsert" prefHeight="26.0" prefWidth="36.0" style="-fx-background-color: white;">
+                            <graphic>
+                                <ImageView fitHeight="26.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/return.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></Button>
+                        <Button layoutX="621.0" layoutY="18.0" mnemonicParsing="false" onAction="#addE_V" text="Thêm vào E-V" />
+                        <Button layoutX="282.0" layoutY="18.0" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="46.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="Tạo" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

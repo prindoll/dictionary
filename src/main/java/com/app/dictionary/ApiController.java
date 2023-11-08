@@ -4,9 +4,9 @@ import com.app.dictionary.base.Translator;
 import com.app.dictionary.base.Voicerss;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,101 +15,77 @@ import java.util.ResourceBundle;
 public class ApiController extends MainController implements Initializable {
 
     @FXML
-    private Button chinese1;
+    private ChoiceBox<String> choiceBox1;
 
     @FXML
-    private Button chinese2;
+    private ChoiceBox<String> choiceBox2;
+    @FXML
+    private TextField textField1;
 
     @FXML
-    private Label choose1;
+    private TextField textField2;
 
-    @FXML
-    private Label choose2;
-
-    @FXML
-    private Button english1;
-
-    @FXML
-    private Button english2;
-
-    @FXML
-    private Button japanese1;
-
-    @FXML
-    private Button japanese2;
-
-    @FXML
-    private TextArea text1;
-
-    @FXML
-    private TextArea text2;
-
-    @FXML
-    private Button translate;
-
-    @FXML
-    private Button vietnamese1;
-
-    @FXML
-    private Button vietnamese2;
-    @FXML
-    private Button voice;
-
-
-    private static final String ENGLISH = "en";
-    private static final String VIETNAMESE = "vi";
-    private static final String CHINESE = "ch";
-    private static final String JAPANESE = "ja";
-    private String tmp1 = "en";
-    private String tmp2 = "vi";
-
+    private final String[] choices = {"English", "Vietnamese", "Korean", "Chinaese", "Japanese"};
+    private final String[] nameRs = {"en-us", "vi-vn", "ko-kr", "zh-cn", "ja-jp"};
+    private final String[] voiceName = {"Linda", "Chi", "Nari", "Luli", "Hina"};
+    private String str1, str2, vo1, vo2;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        choose1.setText("English");
-        choose2.setText("Vietnamese");
-        vietnamese1.setOnAction(event -> {
-            choose1.setText("Vietnamese");
-            tmp1 = VIETNAMESE;
-        });
-        vietnamese2.setOnAction(event -> {
-            choose2.setText("Vietnamese");
-            tmp2 = VIETNAMESE;
-        });
-        english1.setOnAction(event -> {
-            choose1.setText("English");
-            tmp1 = ENGLISH;
-        });
-        english2.setOnAction(event -> {
-            choose2.setText("English");
-            tmp2 = ENGLISH;
-        });
-        japanese1.setOnAction(event -> {
-            choose1.setText("Japanese");
-            tmp1 = JAPANESE;
-        });
-        japanese2.setOnAction(event -> {
-            choose2.setText("Japanese");
-            tmp2 = JAPANESE;
-        });
-        chinese1.setOnAction(event -> {
-            choose1.setText("Chinese");
-            tmp1 = CHINESE;
-        });
-        chinese2.setOnAction(event -> {
-            choose2.setText("Chinese");
-            tmp2 = CHINESE;
-        });
-        translate.setOnAction(event -> {
-            String text = text1.getText();
-            System.out.println(text);
-            String res = null;
-            try {
-                res = Translator.translate( tmp1, tmp2, text);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            text2.setText(res);
+        choiceBox1.getItems().addAll(choices);
+        choiceBox2.getItems().addAll(choices);
+        choiceBox1.setValue("Chọn ngôn ngữ");
+        choiceBox2.setValue("Chọn ngôn ngữ");
+        setChoiceBox1();
+        setChoiceBox2();
+    }
+
+    public void setChoiceBox1() {
+        choiceBox1.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            str1 = newValue;
         });
     }
+    public void setChoiceBox2() {
+        choiceBox2.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            str2 = newValue;
+        });
+    }
+    public void translateClick() {
+        for(int i = 0; i < choices.length; i++) {
+            if(str1.equals(choices[i])) {
+                str1 = nameRs[i];
+                vo1 = voiceName[i];
+            }
+            if(str2.equals(choices[i])) {
+                str2 = nameRs[i];
+                vo2 = voiceName[i];
+            }
+        }
+        String str = textField1.getText();
+        try {
+            textField2.setText(Translator.translate(str1.substring(0, 2), str2.substring(0, 2), str));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void speak1() {
+        Voicerss.speed = 1.5;
+        Voicerss.Name = vo1;
+        Voicerss.language = str1;
+        try {
+            Voicerss.speakWord(textField1.getText());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void speak2() {
+        Voicerss.Name = vo2;
+        Voicerss.language = str2;
+        try {
+            Voicerss.speakWord(textField2.getText());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
