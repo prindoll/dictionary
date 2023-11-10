@@ -1,4 +1,5 @@
 package com.app.dictionary;
+
 import com.app.dictionary.base.*;
 import com.app.dictionary.base.Dictionary;
 import javafx.animation.TranslateTransition;
@@ -16,7 +17,6 @@ import javafx.scene.web.WebView;
 import javafx.util.Callback;
 import javafx.util.Duration;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -70,6 +70,7 @@ public class HomeController extends MainController implements Initializable {
     @FXML
     private VBox vbox;
     private boolean statusEng;
+
     public void loadData() {
         try {
             dictionary.loadDataE();
@@ -84,6 +85,12 @@ public class HomeController extends MainController implements Initializable {
         dataE = dictionary.getMapEnglish();
         dataV = dictionary.getMapVietnamese();
         dictionary.freeMap();
+    }
+
+    public void resetItem() {
+        this.labelText.setText("Từ đang tra");
+        this.webSearch.getEngine().loadContent("");
+        this.searchText.setText("");
     }
 
 
@@ -110,36 +117,62 @@ public class HomeController extends MainController implements Initializable {
                         String definition = selectedWord.getDefination();
                         this.webSearch.getEngine().loadContent(definition, "text/html");
                         this.labelText.setText(newValue);
-                        try {
-                            AddWordToTxt.addHistory(newValue);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
+                        if (statusEng) {
+                            try {
+                                AddWordToTxt.addHistoryEn(newValue);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        } else {
+                            try {
+                                AddWordToTxt.addHistoryVn(newValue);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
                     }
                 }
         );
     }
+
     public void clearSearchE() {
         this.searchText.setText("");
         List<String> list = new ArrayList<>();
-        try {
-            list = AddWordToTxt.hisory();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (statusEng) {
+            try {
+                list = AddWordToTxt.getHistoryEn();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            try {
+                list = AddWordToTxt.getHistoryVn();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         ObservableList<String> olist = FXCollections.observableArrayList();
         olist.setAll(list);
         listSearch.setItems(olist);
         list.clear();
     }
+
     @FXML
     public void addBookmark(ActionEvent event) {
         String tmp = labelText.getText();
         String s = tmp + data.get(tmp).getDefination();
-        try {
-            AddWordToTxt.addBookmark(s);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (statusEng) {
+            try {
+                AddWordToTxt.addBookmarkEn(s);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            try {
+                AddWordToTxt.addBookmarkVn(s);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -165,7 +198,8 @@ public class HomeController extends MainController implements Initializable {
             }
         });
     }
-    public void checkButtonE(ActionEvent e) {
+
+    public void resetDictionaryE_V(ActionEvent e) {
         data = dataV;
         allItems.setAll(data.keySet());
         statusEng = false;
@@ -178,8 +212,10 @@ public class HomeController extends MainController implements Initializable {
         us_.setVisible(false);
         uk_.setVisible(false);
         vie_.setVisible(true);
+        resetItem();
     }
-    public void checkButtonV(ActionEvent e) {
+
+    public void resetDictionaryV_E(ActionEvent e) {
         data = dataE;
         allItems.setAll(data.keySet());
         statusEng = true;
@@ -192,7 +228,9 @@ public class HomeController extends MainController implements Initializable {
         us_.setVisible(true);
         uk_.setVisible(true);
         vie_.setVisible(false);
+        resetItem();
     }
+
     public void initialization() {
         data = dataE;
         allItems.setAll(data.keySet());
@@ -208,59 +246,66 @@ public class HomeController extends MainController implements Initializable {
         vie_.setVisible(false);
     }
 
-    //Xu ly them tu
     public void addE_V() {
         String word = addWord.getText();
         String def = htmlText.getHtmlText();
         Word newWord = new Word(word, def);
-        if(!dataE.containsKey(word)) {
+        if (!dataE.containsKey(word)) {
             dataE.put(word, newWord);
-            AddWordToTxt.addE_V(word);
+            StringBuilder sb = new StringBuilder(word + def);
+            String s =  " dir=\"ltr\"";
+            int position = sb.indexOf(s);
+            sb.delete(position, position + s.length());
+            AddWordToTxt.addE_V(sb.toString());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Đã thêm từ");
             alert.showAndWait();
-        }
-        else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Từ đã có");
             alert.showAndWait();
         }
         updateDictionary();
     }
+
     public void addV_E() {
         String word = addWord.getText();
         String def = htmlText.getHtmlText();
         Word newWord = new Word(word, def);
-        if(!dataV.containsKey(word)) {
+        if (!dataV.containsKey(word)) {
             dataV.put(word, newWord);
-            AddWordToTxt.addV_E(word);
+            StringBuilder sb = new StringBuilder(word + def);
+            String s =  " dir=\"ltr\"";
+            int position = sb.indexOf(s);
+            sb.delete(position, position + s.length());
+            AddWordToTxt.addV_E(sb.toString());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Đã thêm từ");
             alert.showAndWait();
-        }
-        else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Từ đã có");
             alert.showAndWait();
         }
         updateDictionary();
     }
+
     public void updateDictionary() {
-        if(statusEng) {
+        if (statusEng) {
             data = dataE;
             allItems.setAll(dataE.keySet());
-        }
-        else {
+        } else {
             data = dataV;
             allItems.setAll(dataV.keySet());
         }
     }
-    public void reset() {
-        htmlText.setHtmlText("<html>" + addWord.getText() + " /" +  "cách đọc" + "/"
-                + "<ul><li><b><i> loại từ: </i></b><ul><li><font color='#cc0000'><b> Nghĩa:" +
-                "</b></font><ul></li></ul></ul></li></ul><ul><li><b><i>loại từ</i></b><ul><li>" +
-                "<font color='#cc0000'><b> Nghĩa: </b></font></li></ul></li></ul></html>");
+
+    public void resetHtml() {
+        htmlText.setHtmlText("<html>" + addWord.getText() + " /cách đọc/</i><br/><ul><li><b><i>" +
+                "loại từ</i></b><ul><li><font color='#cc0000'><b> " +
+                "nghĩa</b></font></li></ul></li></ul></html>");
     }
+
     public void hideInsert() {
         TranslateTransition slide = new TranslateTransition();
         slide.setDuration(Duration.seconds(1));
@@ -272,6 +317,7 @@ public class HomeController extends MainController implements Initializable {
             insertAnchorPane.setVisible(false);
         });
     }
+
     public void visibleInsert() {
         insertAnchorPane.setVisible(true);
         TranslateTransition slide = new TranslateTransition();
@@ -281,7 +327,8 @@ public class HomeController extends MainController implements Initializable {
         slide.play();
         insertAnchorPane.setTranslateX(850);
     }
-    public void delete() {
+
+    public void deleteWord() {
         String s = labelText.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText("Ban co xoa tu khong");
@@ -289,15 +336,26 @@ public class HomeController extends MainController implements Initializable {
         ButtonType buttonTypeCancel = new ButtonType("Hủy bỏ");
         alert.getButtonTypes().setAll(buttonTypeOK, buttonTypeCancel);
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.get() == buttonTypeOK) {
-            if(statusEng){
+        if (result.get() == buttonTypeOK) {
+            if (statusEng) {
+                for (String tmp : dataE.keySet()) {
+                    if (tmp.equals(s)) {
+                        dataE.remove(tmp);
+                        break;
+                    }
+                }
                 try {
                     DeleteWordToTxt.deleteE_V(s);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-            }
-            else {
+            } else {
+                for (String tmp : dataV.keySet()) {
+                    if (tmp.equals(s)) {
+                        dataV.remove(tmp);
+                        break;
+                    }
+                }
                 try {
                     DeleteWordToTxt.deleteV_E(s);
                 } catch (IOException e) {
@@ -305,11 +363,11 @@ public class HomeController extends MainController implements Initializable {
                 }
             }
         }
-        buttonTypeOK = null;
-        buttonTypeOK = null;
-        result = null;
         alert.close();
+        updateDictionary();
+        resetItem();
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         insertAnchorPane.setTranslateX(850);

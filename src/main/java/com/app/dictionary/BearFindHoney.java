@@ -23,35 +23,17 @@ public class BearFindHoney extends GameController implements Initializable {
     @FXML
     protected AnchorPane hmAnchorPane;
     @FXML
-    private ImageView bear;
+    private Rectangle bear;
 
-    private final Image imgBear = new Image(getClass().getResourceAsStream("img/bear.png"));
+    private final Image imgBear = new Image("img/bear.png");
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         load();
-        bear.setOnKeyPressed(e -> {
-            KeyCode key = e.getCode();
-            double deltaX = 0;
-            double deltaY = 0;
 
-            if (key == KeyCode.LEFT) {
-                deltaX = -10;
-            } else if (key == KeyCode.RIGHT) {
-                deltaX = 10;
-            } else if (key == KeyCode.UP) {
-                deltaY = -10;
-            } else if (key == KeyCode.DOWN) {
-                deltaY = 10;
-            }
-
-            // Di chuyển đối tượng
-            bear.setTranslateX(bear.getTranslateX() + deltaX);
-            bear.setTranslateY(bear.getTranslateY() + deltaY);
-        });
     }
     public void load() {
-        bear.setImage(imgBear);
+
     }
 
-}
 
+}
