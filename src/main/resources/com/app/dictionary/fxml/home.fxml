@@ -29,14 +29,14 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <ListView fx:id="listSearch" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="50.0" layoutY="50.0" pickOnBounds="false" prefHeight="549.0" prefWidth="227.0" scaleShape="false" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" />
+                <ListView fx:id="listSearch" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="50.0" layoutY="50.0" pickOnBounds="false" prefHeight="549.0" prefWidth="227.0" scaleShape="false" style="-fx-background-color: white;" />
                 <Label fx:id="labelText" layoutX="277.0" layoutY="15.0" prefHeight="35.0" prefWidth="277.0" text="Nghĩa của từ" AnchorPane.rightAnchor="283.0" AnchorPane.topAnchor="15.0">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
                 <WebView fx:id="webSearch" layoutX="277.0" layoutY="93.0" prefHeight="500.0" prefWidth="564.0" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="9.399999999999977" />
-                <Button layoutX="784.0" layoutY="21.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: white;">
+                <Button layoutX="784.0" layoutY="21.0" mnemonicParsing="false" onAction="#addBookmark" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: white;">
                     <graphic>
                         <ImageView fitHeight="20.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                             <image>

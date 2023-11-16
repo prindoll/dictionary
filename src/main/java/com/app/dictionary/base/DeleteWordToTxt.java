@@ -4,20 +4,14 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeleteWordToTxt {
-    public static final String BookmarkEN = "txt/bookmarkE.txt";
-    public static final String HistoryEN = "txt/historyE.txt";
-    public static final String DictionaryEtoV = "txt/E_V.txt";
-    public static final String DictionaryVtoE = "txt/V_E.txt";
-    public static final String HistoryVN = "txt/historyV.txt";
-    public static final String BookmarkVN = "txt/bookmarkV.txt";
+public class DeleteWordToTxt extends FileName {
     public static void deleteV_E(String s) throws IOException {
         List<String> list = new ArrayList<>();
         FileReader file = new FileReader(DictionaryVtoE);
         BufferedReader br = new BufferedReader(file);
         String tmp;
         while((tmp = br.readLine()) != null) {
-            String[] res = tmp.split("<html>");
+            String[] res = tmp.split(SPLITTING_CHARACTERS);
             if(!s.equals(res[0])) {
                 list.add(tmp);
             }
@@ -39,7 +33,7 @@ public class DeleteWordToTxt {
         BufferedReader br = new BufferedReader(file);
         String tmp;
         while((tmp = br.readLine()) != null) {
-            String[] res = tmp.split("<html>");
+            String[] res = tmp.split(SPLITTING_CHARACTERS);
             if(!s.equals(res[0])) {
                 list.add(tmp);
             }
@@ -61,7 +55,7 @@ public class DeleteWordToTxt {
         BufferedReader br = new BufferedReader(file);
         String tmp;
         while((tmp = br.readLine()) != null) {
-            String[] res = tmp.split("<html>");
+            String[] res = tmp.split(SPLITTING_CHARACTERS);
             if(!s.equals(res[0])) {
                 list.add(tmp);
             }
@@ -83,7 +77,7 @@ public class DeleteWordToTxt {
         BufferedReader br = new BufferedReader(file);
         String tmp;
         while((tmp = br.readLine()) != null) {
-            String[] res = tmp.split("<html>");
+            String[] res = tmp.split(SPLITTING_CHARACTERS);
             if(!s.equals(res[0])) {
                 list.add(tmp);
             }

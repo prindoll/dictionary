@@ -6,15 +6,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddWordToTxt {
-    public static final String BookmarkEN = "txt/bookmarkE.txt";
-    public static final String HistoryEN = "txt/historyE.txt";
-    public static final String DictionaryEtoV = "txt/E_V.txt";
-    public static final String DictionaryVtoE = "txt/V_E.txt";
-    public static final String HistoryVN = "txt/historyV.txt";
-    public static final String BookmarkVN = "txt/bookmarkV.txt";
+public class AddWordToTxt extends FileName {
     public static void addBookmarkEn(String s) throws IOException {
-        String[] tmp = s.split("<html>");
+        String[] tmp = s.split(SPLITTING_CHARACTERS);
         List<String> list = AddWordToTxt.getBookmarkEn();
         if(!list.contains(tmp[0])) {
             FileWriter fileWriter = new FileWriter(BookmarkEN, true);
@@ -35,7 +29,7 @@ public class AddWordToTxt {
         list.clear();
     }
     public static void addBookmarkVn(String s) throws IOException {
-        String[] tmp = s.split("<html>");
+        String[] tmp = s.split(SPLITTING_CHARACTERS);
         List<String> list = AddWordToTxt.getBookmarkVn();
         if(!list.contains(tmp[0])) {
             FileWriter fileWriter = new FileWriter(BookmarkVN, true);
@@ -61,7 +55,7 @@ public class AddWordToTxt {
         BufferedReader en = new BufferedReader(fileReader);
         String tmp;
         while ((tmp = en.readLine()) != null) {
-            String[] res = tmp.split("<html>");
+            String[] res = tmp.split(SPLITTING_CHARACTERS);
             list.add(res[0]);
         }
         en.close();
@@ -74,7 +68,7 @@ public class AddWordToTxt {
         BufferedReader en = new BufferedReader(fileReader);
         String tmp;
         while ((tmp = en.readLine()) != null) {
-            String[] res = tmp.split("<html>");
+            String[] res = tmp.split(SPLITTING_CHARACTERS);
             list.add(res[0]);
         }
         en.close();
