@@ -5,9 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
@@ -29,7 +31,7 @@ public class GameController extends MainController implements Initializable {
     private Button game1;
 
     @FXML
-    private ImageView game1Image;
+    private ImageView bear;
 
     @FXML
     private Button game2;
@@ -68,7 +70,7 @@ public class GameController extends MainController implements Initializable {
     }
     public void playBearFindHoney() {
         try {
-            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/BearFindHoney.fxml"));
+            FXMLLoader file = new FXMLLoader(getClass().getResource("fxml/bearfindhoney.fxml"));
             gameBearFindHoney = file.load();
         } catch (IOException e) {
             e.printStackTrace();
@@ -80,6 +82,7 @@ public class GameController extends MainController implements Initializable {
         centerGame.getChildren().setAll(chooseGame);
         hboxGame.setVisible(false);
         gameHangMan = null;
+        gameBearFindHoney = null;
 
     }
 

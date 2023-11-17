@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="a62f9581-5147-4e15-bc93-f4980c2f2c9d" />
+        <option name="url" value="https://github.com/prindoll/dictionary.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2XEll1NdqODBGIhOSpBK8dtRYWM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "C:/Users/admin/OneDrive - vnu.edu.vn/Desktop/BaiTapLon_/dictionary/src/main/java/com/app/dictionary",
+    "last_opened_file_path": "C:/Users/admin/Downloads/voicerss_tts_java/voicerss_tts.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Settings.JavaScript",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\OneDrive - vnu.edu.vn\Desktop\BaiTapLon_\dictionary\txt" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\OneDrive - vnu.edu.vn\Desktop\BaiTapLon_\dictionary\src\main\resources\com\app\dictionary\img" />
+      <recent name="C:\Users\admin\OneDrive - vnu.edu.vn\Desktop\BaiTapLon_\dictionary\src\main\resources\com\app\dictionary\fxml" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.dictionary.Main" />
+      <module name="dictionary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.dictionary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="" />
+      <created>1698202266575</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698202266575</updated>
+      <workItem from="1698202267561" duration="1629000" />
+      <workItem from="1698203913881" duration="653000" />
+      <workItem from="1698251134682" duration="29000" />
+      <workItem from="1698313320727" duration="42000" />
+      <workItem from="1698544647204" duration="74000" />
+      <workItem from="1698658536792" duration="6676000" />
+      <workItem from="1698764421334" duration="232000" />
+      <workItem from="1698768342015" duration="3563000" />
+      <workItem from="1698804465018" duration="354000" />
+      <workItem from="1698804844390" duration="2389000" />
+      <workItem from="1698823758891" duration="595000" />
+      <workItem from="1698849371934" duration="701000" />
+      <workItem from="1698851055383" duration="2881000" />
+      <workItem from="1698906328047" duration="2106000" />
+      <workItem from="1698912501643" duration="30000" />
+      <workItem from="1699271951791" duration="5459000" />
+      <workItem from="1699374215891" duration="12000" />
+      <workItem from="1699425351720" duration="4972000" />
+      <workItem from="1699517242088" duration="6000" />
+      <workItem from="1699549997608" duration="3874000" />
+      <workItem from="1699716749783" duration="18000" />
+      <workItem from="1699717291494" duration="152000" />
+      <workItem from="1699717471411" duration="617000" />
+      <workItem from="1699718137279" duration="1662000" />
+      <workItem from="1699720571927" duration="682000" />
+      <workItem from="1699772380935" duration="3482000" />
+      <workItem from="1699969027257" duration="14000" />
+      <workItem from="1699973785370" duration="3421000" />
+      <workItem from="1700013516997" duration="613000" />
+      <workItem from="1700117103081" duration="2739000" />
+      <workItem from="1700121465441" duration="70000" />
+      <workItem from="1700123854702" duration="886000" />
+      <workItem from="1700145952938" duration="4887000" />
+      <workItem from="1700151471834" duration="1545000" />
+      <workItem from="1700182441130" duration="2886000" />
+      <workItem from="1700185385841" duration="2526000" />
+      <workItem from="1700188256123" duration="540000" />
+      <workItem from="1700200786020" duration="181000" />
+      <workItem from="1700234315058" duration="124000" />
+      <workItem from="1700234537266" duration="22000" />
+      <workItem from="1700234737062" duration="513000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml&#10;" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
