@@ -2,3 +2,5 @@ nice
 valor
 1 to many relationship
 main
+1-byte character
+1-byte character set

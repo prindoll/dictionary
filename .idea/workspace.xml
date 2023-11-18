@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" />
+    <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/base/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/txt/question.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/media/audio.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txt/historyE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/historyE.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,10 +63,12 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/admin/OneDrive - vnu.edu.vn/Desktop/BaiTapLon_/dictionary/src/main/java/com/app/dictionary",
-    "last_opened_file_path": "C:/Users/admin/Downloads/voicerss_tts_java/voicerss_tts.jar",
+    "last_opened_file_path": "D:/Workspace/lib/voicerss_tts.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -147,6 +158,7 @@
       <workItem from="1700234315058" duration="124000" />
       <workItem from="1700234537266" duration="22000" />
       <workItem from="1700234737062" duration="513000" />
+      <workItem from="1700316888828" duration="633000" />
     </task>
     <servers />
   </component>
