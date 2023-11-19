@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/base/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/txt/question.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/media/audio.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BearFindHoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BearFindHoney.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/base/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/base/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt/historyE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/historyE.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,27 +56,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/admin/OneDrive - vnu.edu.vn/Desktop/BaiTapLon_/dictionary/src/main/java/com/app/dictionary",
-    "last_opened_file_path": "D:/Workspace/lib/voicerss_tts.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Settings.JavaScript",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/admin/OneDrive - vnu.edu.vn/Desktop/BaiTapLon_/dictionary/src/main/java/com/app/dictionary&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Downloads/voicerss_tts_java/voicerss_tts.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.JavaScript&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\OneDrive - vnu.edu.vn\Desktop\BaiTapLon_\dictionary\txt" />
@@ -89,7 +86,7 @@
       <recent name="C:\Users\admin\OneDrive - vnu.edu.vn\Desktop\BaiTapLon_\dictionary\src\main\resources\com\app\dictionary\fxml" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.app.dictionary.Main" />
       <module name="dictionary" />
@@ -103,9 +100,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Question" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.dictionary.base.Question" />
+      <module name="dictionary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.dictionary.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Question" />
       </list>
     </recent_temporary>
   </component>
@@ -159,6 +170,11 @@
       <workItem from="1700234537266" duration="22000" />
       <workItem from="1700234737062" duration="513000" />
       <workItem from="1700316888828" duration="633000" />
+      <workItem from="1700317972830" duration="512000" />
+      <workItem from="1700320829403" duration="266000" />
+      <workItem from="1700321225972" duration="3252000" />
+      <workItem from="1700324500310" duration="2056000" />
+      <workItem from="1700384224606" duration="2192000" />
     </task>
     <servers />
   </component>

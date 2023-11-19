@@ -50,12 +50,12 @@ public class Question {
 
     public static List<Question> loadQuestion() throws IOException {
         List<Question> questions = new ArrayList<Question>();
-        FileReader fileReader = new FileReader("txt/question.txt.txt");
+        FileReader fileReader = new FileReader("txt/question.txt");
         BufferedReader reader = new BufferedReader(fileReader);
         String tmp;
         while ((tmp = reader.readLine()) != null) {
             String[] lines = tmp.split("=");
-            System.out.println(lines.length);
+            //System.out.println(lines.length);
             if(lines.length == 6) {
                 Question question = new Question(lines[0], lines[1], lines[2], lines[3], lines[4], lines[5]);
                 questions.add(question);
@@ -63,13 +63,25 @@ public class Question {
         }
         return questions;
     }
-
+    public static int trueAnswer(Question question) {
+        if(question.getCorrectAnswer().equals(question.getAnswer1())){
+            return 1;
+        }
+        else if(question.getCorrectAnswer().equals(question.getAnswer2())){
+            return 2;
+        }
+        else if(question.getCorrectAnswer().equals(question.getAnswer3())){
+            return 3;
+        }
+        else
+            return 4;
+    }
     public static void main(String[] args) {
         try {
             List<Question> questions = loadQuestion();
             System.out.println(questions.size());
             for (Question question : questions) {
-                System.out.println(question.getQuestion());
+                System.out.println(trueAnswer(question));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
