@@ -59,7 +59,7 @@
                   <Image url="@../img/co.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="80.0" pickOnBounds="true">
+            <ImageView fx:id="imageQuestion1" fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="80.0" pickOnBounds="true">
                <image>
                   <Image url="@../img/q.png" />
                </image>
@@ -89,7 +89,7 @@
                   <Image url="@../img/co.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="320.0" layoutY="160.0" pickOnBounds="true">
+            <ImageView fx:id="imageQuestion2" fitHeight="80.0" fitWidth="80.0" layoutX="320.0" layoutY="160.0" pickOnBounds="true">
                <image>
                   <Image url="@../img/q.png" />
                </image>
@@ -129,12 +129,12 @@
                   <Image url="@../img/rock.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="80.0" layoutY="320.0" pickOnBounds="true">
+            <ImageView fx:id="imageQuestion3" fitHeight="80.0" fitWidth="80.0" layoutX="80.0" layoutY="320.0" pickOnBounds="true">
                <image>
                   <Image url="@../img/q.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="320.0" pickOnBounds="true">
+            <ImageView fx:id="imageQuestion4" fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="320.0" pickOnBounds="true">
                <image>
                   <Image url="@../img/q.png" />
                </image>
@@ -184,7 +184,7 @@
                   <Image url="@../img/co.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="480.0" pickOnBounds="true">
+            <ImageView fx:id="imageQuestion6" fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="480.0" pickOnBounds="true">
                <image>
                   <Image url="@../img/q.png" />
                </image>
@@ -214,7 +214,7 @@
                   <Image url="@../img/co.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="320.0" layoutY="400.0" pickOnBounds="true">
+            <ImageView fx:id="imageQuestion5" fitHeight="80.0" fitWidth="80.0" layoutX="320.0" layoutY="400.0" pickOnBounds="true">
                <image>
                   <Image url="@../img/q.png" />
                </image>
