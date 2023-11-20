@@ -7,7 +7,6 @@
     <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BearFindHoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BearFindHoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +174,8 @@
       <workItem from="1700384224606" duration="3430000" />
       <workItem from="1700406593465" duration="806000" />
       <workItem from="1700407481212" duration="579000" />
-      <workItem from="1700445902821" duration="760000" />
+      <workItem from="1700445902821" duration="1078000" />
+      <workItem from="1700467853734" duration="1093000" />
     </task>
     <servers />
   </component>
