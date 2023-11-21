@@ -1,0 +1,63 @@
+LOBSTER - Một loại tôm biển lớn, thường được chế biến như một món ăn đặc sản.
+CHIMERA - Một sinh vật huyền bí, kết hợp từ nhiều phần khác nhau của các loài động vật khác nhau.
+BRUSCHETTA - Một món ăn Ý gồm bánh mì nướng, thường ăn kèm với cà chua và dầu olive.
+FLAMINGO - Một loài chim có màu hồng nổi bật và chân dài.
+GOULASH - Một món súp nước Hungary, thường chứa thịt bò, cà chua và gia vị.
+OCTOPUS - Một loài bạch tuộc có nhiều chân và khả năng thay đổi màu sắc.
+TOFU - Một sản phẩm từ đậu nành, thường được sử dụng trong ẩm thực chay hoặc đông lạnh.
+PORCUPINE - Một loài gặm nhấm có lông gai nhọn trên lưng.
+RISOTTO - Một món ăn Ý truyền thống, được làm từ gạo và nước dùng.
+ARMADILLO - Một loài động vật có vỏ bảo vệ đặc biệt.
+QUICHE - Một loại bánh ăn kèm với nhân từ trứng và kem tươi, phổ biến trong ẩm thực Pháp.
+CHEETAH - Một loài báo nhanh nhất trên cạn.
+MOCHI - Một loại bánh gạo Nhật Bản, có thể chứa nhân đậu và trái cây.
+ARMADILLO - Một loài động vật có vỏ bảo vệ đặc biệt.
+KEBAB - Một món ăn châu Á và Trung Đông, thường là thịt nướng trên que.
+LEMUR - Một loài khỉ nhỏ và thân thiện sống ở Madagascar.
+PESTO - Một loại sốt Ý được làm từ hạt dẻ cười, cây lúa mạch, và dầu olive.
+HAMMERHEAD SHARK - Một loài cá mập với đầu hình búa độc đáo.
+GIRAFFE - Một loài động vật có cổ dài và cổ mặt độc đáo.
+SUSHI - Một món ăn Nhật Bản ngon miệng, thường bao gồm cơm và hải sản.
+PENGUIN - Chim cánh cụt, sống chủ yếu ở các vùng lạnh.
+TIRAMISU - Một món tráng miệng Ý phổ biến với lớp kem và cacao.
+KOALA - Một loài động vật có túi, sống chủ yếu ở Úc.
+BURRITO - Một món ăn đến từ Mexico, thường chứa cơm, thịt, và rau sống.
+CHEETAH - Một loài báo nhanh nhất trên cạn.
+PHO - Một món súp nước Việt Nam phổ biến, thường được làm từ nước dùng, bún và thịt.
+CHAMELEON - Một loài thằn lằn có khả năng thay đổi màu da.
+CROISSANT - Một loại bánh ngọt ngon xuất phát từ Pháp.
+ARMADILLO - Một loài động vật có vỏ bảo vệ đặc biệt.
+LASAGNA - Một món ăn Ý truyền thống, có lớp bánh mì, thịt và sốt cà chua.
+SEAHORSE - Một loài cá có hình dáng giống ngựa và sống ở dọc theo rừng san hô.
+SASHIMI - Một món ăn Nhật Bản tương tự như sushi nhưng không có cơm.
+HEDGEHOG - Một loài động vật có lông mịn và gai nhỏ trên lưng.
+GUACAMOLE - Một món ăn Mexico làm từ bơ và các nguyên liệu khác.
+FLAMINGO - Một loài chim có màu hồng nổi bật và chân dài.
+DIMSUM - Một loại ẩm thực Trung Quốc, thường gồm nhiều món nhỏ khác nhau.
+OSTRICH - Một loài chim không bay, có thể chạy nhanh.
+TANDOORI - Một phong cách nấu ăn Ấn Độ, thường sử dụng lò nung đất sét.
+ORANGUTAN - Một loài linh trưởng có khả năng sử dụng công cụ.
+GYOZA - Một món ăn Nhật Bản tương tự như bánh xèo, nhân bên trong thường có thịt và rau.
+KANGAROO - Một loài động vật có túi ở phía trước, sống chủ yếu ở Úc.
+RAVIOLI - Một loại bánh Ý có nhân bên trong và thường được ăn kèm với sốt.
+CHIMPANZEE - Một loài khỉ thông minh sống ở châu Phi.
+RAMEN - Một món ăn súp mỳ Nhật Bản, thường chứa nước dùng và các thành phần khác.
+PANDA - Một loài gấu trắng và đen, sống ở Trung Quốc.
+TEMPURA - Một phong cách chiên giòn Nhật Bản, thường được chế biến với các loại hải sản và rau.
+ROSE - Loài hoa thường biểu tượng cho tình yêu và đẹp.
+SUNFLOWER - Hoa hướng dương có đầu nhỏ giống mặt trời, thể hiện sự lạc quan và tươi vui.
+ORCHID - Một loài hoa tinh tế và quý phái, thường được sử dụng trong nghệ thuật và trang trí.
+TULIP - Hoa tulip đa dạng về màu sắc và thường biểu tượng cho sự hoàn hảo.
+DAISY - Hoa cúc nhỏ, tươi sáng, thường gắn liền với hình ảnh của sự trong trắng.
+LAVENDER - Hoa oải hương, mang đến mùi thơm dễ chịu và thường được sử dụng trong làm đẹp và spa.
+LILY - Hoa lily thường tượng trưng cho sự thuần khiết và quý phái.
+JASMINE - Hoa nhài, có mùi thơm dễ chịu và thường được sử dụng trong nước hoa.
+PEONY - Loài hoa màu hồng phổ biến, tượng trưng cho sự giàu có và hạnh phúc.
+DAFFODIL - Hoa nghệ, thường mọc vào mùa xuân và mang lại không khí tươi mới.
+HYDRANGEA - Hoa cẩm tú cầu, có khả năng thay đổi màu sắc tùy thuộc vào độ axit của đất.
+IRIS - Hoa diên vĩ, có hình dáng độc đáo và đẹp mắt.
+POPPY - Hoa anh túc, thường được kết hợp với ký ức về chiến tranh và hòa bình.
+MARIGOLD - Hoa cúc vạn thọ, thường được trồng để tạo ra một không gian vui nhộn và màu sắc.
+CAMELLIA - Hoa trà, đẹp và quý phái, thường được trồng để tạo điểm nhấn trong vườn.
+VIOLET - Hoa tim, thường tượng trưng cho tình yêu và trung thành.
+ZINNIA - Hoa zinnia sáng màu, thường được trồng để làm đẹp cho vườn hoa.
