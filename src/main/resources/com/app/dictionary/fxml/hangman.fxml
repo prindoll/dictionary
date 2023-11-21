@@ -35,42 +35,42 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="tf1" editable="false" layoutX="332.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
+      <TextField fx:id="tf1" editable="false" layoutX="303.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tf2" editable="false" layoutX="382.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
+      <TextField fx:id="tf2" editable="false" layoutX="347.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tf3" editable="false" layoutX="433.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
+      <TextField fx:id="tf3" editable="false" layoutX="391.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tf4" editable="false" layoutX="481.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
+      <TextField fx:id="tf4" editable="false" layoutX="435.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tf5" editable="false" layoutX="531.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
+      <TextField fx:id="tf5" editable="false" layoutX="481.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tf6" editable="false" layoutX="581.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
+      <TextField fx:id="tf6" editable="false" layoutX="525.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tf7" editable="false" layoutX="635.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
+      <TextField fx:id="tf7" editable="false" layoutX="569.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tf8" editable="false" layoutX="686.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
+      <TextField fx:id="tf8" editable="false" layoutX="615.0" layoutY="353.0" prefHeight="40.0" prefWidth="40.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -110,5 +110,7 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <TextField fx:id="tf9" layoutX="663.0" layoutY="353.0" prefHeight="39.0" prefWidth="40.0" />
+      <TextField fx:id="tf10" layoutX="710.0" layoutY="353.0" prefHeight="39.0" prefWidth="40.0" />
    </children>
 </AnchorPane>
