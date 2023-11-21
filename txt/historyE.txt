@@ -13,3 +13,22 @@ Access
 2D (two dimension)
 2D image
 7-bit ASCII code
+2D configuration
+2-way device
+8-bit character code
+8-bit microcomputer
+A A
+A ignore B gate
+A-D = A
+8-bit character string
+8-bit character
+8-bit character set
+A shares
+3D (three dimension) configuration
+3D (three dimension) calculation
+3D (three dimension) image
+undermining
+bucket piston
+anamorphosis
+frowning
+collocate

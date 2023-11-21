@@ -74,17 +74,17 @@ public class HomeController extends MainController implements Initializable {
     public void loadData() {
         try {
             dictionary.loadDataE();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        try {
             dictionary.loadDataV();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        dataE = dictionary.getMapEnglish();
-        dataV = dictionary.getMapVietnamese();
-        dictionary.freeMap();
+
+        dataE = (dictionary != null) ? dictionary.getMapEnglish() : null;
+        dataV = (dictionary != null) ? dictionary.getMapVietnamese() : null;
+
+        if (dictionary != null) {
+            dictionary.freeMap();
+        }
     }
 
     public void resetItem() {
@@ -95,15 +95,17 @@ public class HomeController extends MainController implements Initializable {
 
 
     public void checkSearch() {
-        this.searchText.textProperty().addListener((observable, oldValue, newValue) -> {
+        searchText.textProperty().addListener((observable, oldValue, newValue) -> {
             ObservableList<String> tmpItems = FXCollections.observableArrayList();
+
             if (newValue != null) {
-                for (String item : allItems) {
-                    if (item.toLowerCase().startsWith(newValue.toLowerCase())) {
-                        tmpItems.add(item);
-                    }
-                }
+                tmpItems.addAll(
+                        allItems.stream()
+                                .filter(item -> item.toLowerCase().startsWith(newValue.toLowerCase()))
+                                .toList()
+                );
             }
+
             listSearch.setItems(tmpItems);
         });
     }

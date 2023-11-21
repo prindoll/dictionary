@@ -78,18 +78,15 @@ public class BookmarkController implements Initializable {
         bookmarkList.setItems(keyBookmark);
     }
     public void setBookmark() {
-        String tmp = "";
         bookmarkChoice.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            String value = "";
-            value = newValue;
-            if(value.equals(choicesBookmark[1])) {
-                setBookmarkV();
-            }
-            else {
-                setBookmarkE();
+            if (newValue != null) {
+                if (newValue.equals(choicesBookmark[1])) {
+                    setBookmarkV();
+                } else {
+                    setBookmarkE();
+                }
             }
         });
-
     }
 
     private void resetWeb() {
