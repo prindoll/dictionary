@@ -98,17 +98,23 @@ public class BookmarkController implements Initializable {
     }
 
     public void showBookmarks() {
-        this.bookmarkList.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> {
-                    if (newValue != null) {
-                        Word selectedWord = bookmarks.get(newValue.trim());
-                        String definition = selectedWord.getDefination();
-                        this.bookmarkWebView.getEngine().loadContent(definition, "text/html");
-                        this.bookmarkLabel.setText(newValue);
-                    }
-                }
-        );
+        bookmarkList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                showBookmarkDetails(newValue.trim());
+            }
+        });
     }
+
+    private void showBookmarkDetails(String newValue) {
+        Word selectedWord = bookmarks.get(newValue);
+
+        if (selectedWord != null) {
+            String definition = selectedWord.getDefination();
+            bookmarkWebView.getEngine().loadContent(definition, "text/html");
+            bookmarkLabel.setText(newValue);
+        }
+    }
+
     public void setFont() {
         bookmarkList.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
             @Override

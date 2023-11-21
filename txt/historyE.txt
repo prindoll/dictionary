@@ -2,5 +2,14 @@ nice
 valor
 1 to many relationship
 main
+1-byte character string
+1-byte character set
+2D module = two-dimensional module
+4th Generation Language (4GL)
+Access
 1-byte character
 1-byte character set
+3D (three dimension)
+2D (two dimension)
+2D image
+7-bit ASCII code

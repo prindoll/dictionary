@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/media/audio.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BearFindHoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BearFindHoney.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/Hangman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/hangman.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/hangman.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txt/bookmarkE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/bookmarkE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txt/historyE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/historyE.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,11 +183,25 @@
       <workItem from="1700407481212" duration="579000" />
       <workItem from="1700445902821" duration="1078000" />
       <workItem from="1700467853734" duration="1093000" />
+      <workItem from="1700489922000" duration="2702000" />
+      <workItem from="1700492929471" duration="187000" />
+      <workItem from="1700562588247" duration="1933000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml&#10;" />

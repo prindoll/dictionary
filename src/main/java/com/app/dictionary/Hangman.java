@@ -54,9 +54,9 @@ public class Hangman extends GameController implements Initializable {
     @FXML
     private Label hint;
     @FXML
-    private Label letter_count;
-    @FXML
     private Label hint_label;
+    @FXML
+    private Label textwin = new Label("");
 
     private String[] data = {
             "MEXICO COUNTRY",
@@ -102,8 +102,19 @@ public class Hangman extends GameController implements Initializable {
     }
     public void setHint(){
         hint.setText(hint_str);
-        letter_count.setText(letter_size+" Letters");
+        tf1.setText("");
+        tf2.setText("");
+        tf3.setText("");
+        tf4.setText("");
+        tf5.setText("");
+        tf6.setText("");
+        tf7.setText("");
+        tf8.setText("");
 
+        tf5.setVisible(true);
+        tf6.setVisible(true);
+        tf7.setVisible(true);
+        tf8.setVisible(true);
         if(letter_size==7){
             tf8.setVisible(false);
         }
@@ -126,7 +137,7 @@ public class Hangman extends GameController implements Initializable {
 
 
     public void CheckInput(){
-        String str = input.getText();
+        String str = input.getText().toUpperCase();
         if (word.contains(str)) {
             int index = 0;
             for(int i=0; i<word.length(); i++) {
@@ -136,6 +147,7 @@ public class Hangman extends GameController implements Initializable {
                 }
                 index++;
             }
+
         }
         else {
             setImage();

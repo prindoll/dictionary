@@ -193,8 +193,8 @@ public class BearFindHoney extends GameController implements Initializable {
 
     public void checkButton(Question q) {
         int ans = Question.trueAnswer(q);
-        answer1.setOnAction(event1 -> {
-            ButtonKq.setVisible(true);
+            answer1.setOnAction(event1 -> {
+                ButtonKq.setVisible(true);
             if (ans == 1) {
                 ButtonKq.setText(correct);
 
