@@ -1,0 +1,19 @@
+Index: txt/historyE.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>nice\r\nvalor\r\n1 to many relationship\r\nmain\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/txt/historyE.txt b/txt/historyE.txt
+--- a/txt/historyE.txt	(revision 0e1802444b1986e6462c84a7ad55e31d1f4fdc13)
++++ b/txt/historyE.txt	(date 1700112811275)
+@@ -2,3 +2,8 @@
+ valor
+ 1 to many relationship
+ main
++1-byte character string
++1-byte character set
++2D module = two-dimensional module
++4th Generation Language (4GL)
++Access
