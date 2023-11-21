@@ -53,18 +53,31 @@ public class BookmarkController implements Initializable {
         showBookmarks();
         setFont();
     }
+    public void updateBookmark() {
+        loadBookmarks();
+        if(status) {
+            setBookmarkE();
+        } else {
+            setBookmarkV();
+        }
+    }
 
     public void setInitialize() {
+        loadBookmarks();
+        bookmarks = bookmarkEngLish;
+        keyBookmark.setAll(bookmarks.keySet());
+        bookmarkList.setItems(keyBookmark);
+    }
+
+    private void loadBookmarks() {
         try {
             bookmarkEngLish = dictionary.getBookmarkEnglish();
             bookmarkVietnamese = dictionary.getBookmarkVietnamese();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        bookmarks = bookmarkEngLish;
-        keyBookmark.setAll(bookmarks.keySet());
-        bookmarkList.setItems(keyBookmark);
     }
+
     public void setBookmarkV() {
         resetWeb();
         bookmarks = bookmarkVietnamese;
@@ -80,6 +93,7 @@ public class BookmarkController implements Initializable {
     public void setBookmark() {
         bookmarkChoice.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
+                loadBookmarks();
                 if (newValue.equals(choicesBookmark[1])) {
                     setBookmarkV();
                 } else {

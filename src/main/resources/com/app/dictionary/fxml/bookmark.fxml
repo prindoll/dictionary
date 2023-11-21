@@ -19,5 +19,6 @@
          </font>
       </Label>
       <ChoiceBox fx:id="bookmarkChoice" layoutX="90.0" layoutY="30.0" prefWidth="150.0" />
+      <Button layoutX="165.0" layoutY="549.0" mnemonicParsing="false" onAction="#updateBookmark" text="Update" />
    </children>
 </AnchorPane>
