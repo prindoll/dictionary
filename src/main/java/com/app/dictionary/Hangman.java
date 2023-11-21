@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -57,9 +58,7 @@ public class Hangman extends GameController implements Initializable {
     @FXML
     private TextField input;
     @FXML
-    private Label hint;
-    @FXML
-    private Label hint_label;
+    private TextArea hint_text;
     @FXML
     private Label textwin = new Label("");
 
@@ -101,7 +100,7 @@ public class Hangman extends GameController implements Initializable {
     }
 
     public void setHint() {
-        hint.setText(hint_str);
+        hint_text.setText(hint_str);
         tf1.setText("");
         tf2.setText("");
         tf3.setText("");
