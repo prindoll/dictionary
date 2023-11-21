@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt/bookmarkE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/bookmarkE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt/bookmarkV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/bookmarkV.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt/historyE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/historyE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt/historyV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/historyV.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +180,6 @@
       <workItem from="1700489922000" duration="2702000" />
       <workItem from="1700492929471" duration="187000" />
       <workItem from="1700562588247" duration="2572000" />
-      <workItem from="1700566038600" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
       <option name="closed" value="true" />
