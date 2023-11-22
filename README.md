@@ -5,8 +5,10 @@ Group 29
 1. Le Tien Thuc - 22021197
 2. Tran Van Quang - 22021198
 3. Le Quang Thang - 22021209
-
+## Demo
+https://www.youtube.com/watch?v=02taeYQmVbw
 ## Description
+
 The application is designed to support learning English. The application is written in Java and uses the JavaFX library. 
 The application is based on the MVC model. The application has two types of dictionaries: English-Vietnamese and Vietnamese-English. The application use E_V.txt and V_E.txt files to store data.
 1. Rich Vocabulary Repository:
@@ -52,8 +54,6 @@ The application is based on the MVC model. The application has two types of dict
 8 . You can use API GoogleTranslate yo  translate the word ì you want .
 8. To exit the application, click the Exit button (Cross icon).
 
-## Demo
-![Demo](
 
 ## Future improvements
 1. Add more dictionaries.

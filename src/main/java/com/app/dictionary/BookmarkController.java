@@ -84,12 +84,14 @@ public class BookmarkController implements Initializable {
 
     public void setBookmarkV() {
         resetWeb();
+        status = false;
         bookmarks = bookmarkVietnamese;
         keyBookmark.setAll(bookmarks.keySet());
         bookmarkList.setItems(keyBookmark);
     }
     public void setBookmarkE() {
         resetWeb();
+        status = true;
         bookmarks = bookmarkEngLish;
         keyBookmark.setAll(bookmarks.keySet());
         bookmarkList.setItems(keyBookmark);

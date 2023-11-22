@@ -343,6 +343,7 @@ public class HomeController extends MainController implements Initializable {
                 for (String tmp : dataE.keySet()) {
                     if (tmp.equals(s)) {
                         dataE.remove(tmp);
+
                         break;
                     }
                 }
