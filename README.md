@@ -23,7 +23,7 @@ The application is based on the MVC model. The application has two types of dict
   The application to use Google Translate API for swift and accurate translations. Expand your understanding by accessing a wealth of linguistic resources seamlessly.
 
 ## UML diagram
-![UML diagram](
+![UML diagram](img/UML.png)
 
 ## Installation
 1. Clone the project from the repository.
@@ -60,9 +60,8 @@ The application is based on the MVC model. The application has two types of dict
 2. Add more complex games.
 3. Optimize the word lookup algorithm.
 4. Use a database to store data.
-5. Integrate the application with API of Google Translate to translate paragraphs and whole documents.
-6. Integrate the application with API of Google Speech to Text to convert speech to text.
-7. Improve the user interface.
+5. Integrate the application with API of Google Speech to Text to convert speech to text.
+6. Improve the user interface.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -71,4 +70,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 The project is completed.
 
 ## Notes
-The application is written for educational purposes.
+Cre : 3 ae siu nhan Opp
