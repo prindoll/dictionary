@@ -70,4 +70,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 The project is completed.
 
 ## Notes
-Cre : 3 ae siu nhan Opp
+Cre : 3 ae siu nhan Opp.
