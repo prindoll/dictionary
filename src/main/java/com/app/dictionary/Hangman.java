@@ -73,6 +73,7 @@ public class Hangman extends GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
+            textwin.setText("");
             loadData();
             setWord();
             setHint();
@@ -162,6 +163,11 @@ public class Hangman extends GameController implements Initializable {
                 char c = word.charAt(i);
                 if (String.valueOf(c).equals(str)) {
                     setLetter(index, Character.toString(c));
+                    letter_size--;
+                    if (letter_size==0) {
+                        textwin.setText("YOU WIN");
+                        break;
+                    }
                 }
                 index++;
             }
@@ -208,6 +214,7 @@ public class Hangman extends GameController implements Initializable {
 
 
     public void restart(ActionEvent event) throws IOException {
+        textwin.setText("");
         life = 6;
         img.setImage(image1);
         setWord();

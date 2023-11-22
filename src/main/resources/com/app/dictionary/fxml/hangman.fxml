@@ -100,9 +100,9 @@
             <Font size="14.0" />
          </font>
       </TextArea>
-      <Label layoutX="472.0" layoutY="101.0" prefHeight="40.0" prefWidth="117.0" text="You" textFill="#ce1717">
+      <Label fx:id="textwin" layoutX="472.0" layoutY="101.0" prefHeight="40.0" prefWidth="131.0" textFill="#ce1717">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="28.0" />
          </font>
       </Label>
       <TextField fx:id="tf9" layoutX="663.0" layoutY="353.0" prefHeight="39.0" prefWidth="40.0" />
