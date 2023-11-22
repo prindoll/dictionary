@@ -23,7 +23,7 @@ The application is based on the MVC model. The application has two types of dict
   The application to use Google Translate API for swift and accurate translations. Expand your understanding by accessing a wealth of linguistic resources seamlessly.
 
 ## UML diagram
-![UML diagram]((https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/398215933_1319492882101181_8014925095882707726_n.png?_nc_cat=104&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeFUeP5-htQRJ9lTH14zruVRi9iiJ8_CX5GL2KInz8JfkYaZ6g1b0-8yUofsEOLHdwwEHzyL6ZQuL_53wvtGEsre&_nc_ohc=y983xiE6XaUAX97OZY5&_nc_ht=scontent.fhan5-2.fna&oh=03_AdTibpma6BTK_XMKRYJ7006ral-sI--vERbuIxe8Xg-dYA&oe=65853C6E))
+![UML diagram](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/398215933_1319492882101181_8014925095882707726_n.png?_nc_cat=104&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeFUeP5-htQRJ9lTH14zruVRi9iiJ8_CX5GL2KInz8JfkYaZ6g1b0-8yUofsEOLHdwwEHzyL6ZQuL_53wvtGEsre&_nc_ohc=y983xiE6XaUAX97OZY5&_nc_ht=scontent.fhan5-2.fna&oh=03_AdTibpma6BTK_XMKRYJ7006ral-sI--vERbuIxe8Xg-dYA&oe=65853C6E)
 
 ## Installation
 1. Clone the project from the repository.
