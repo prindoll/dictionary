@@ -137,17 +137,15 @@ public class BearFindHoney extends GameController implements Initializable {
 
             }
             if (ButtonKq.getText().equals(correct)) {
+                hideToAll();
                 int tmp = isQuestion(x, y);
                 setPass(tmp);
                 ques[(tmp-1)*2] = -1;
                 ques[(tmp-1)*2 + 1] = -1;
                 setStep(80);
-                hideToAll();
 
             }
-            if ( countDie == 3) {
-                youLose();
-            }
+
             if (isWin()) {
                 youWin();
             }
@@ -161,6 +159,7 @@ public class BearFindHoney extends GameController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText("You Lose");
         alert.showAndWait();
+
     }
 
     public boolean isRock(double x, double y) {
@@ -197,10 +196,12 @@ public class BearFindHoney extends GameController implements Initializable {
                 ButtonKq.setVisible(true);
             if (ans == 1) {
                 ButtonKq.setText(correct);
-
             } else {
                 ButtonKq.setText(wrong);
                 countDie ++;
+                if ( countDie == 3) {
+                    youLose();
+                }
             }
         });
         answer2.setOnAction(event1 -> {
@@ -210,6 +211,9 @@ public class BearFindHoney extends GameController implements Initializable {
             } else {
                 ButtonKq.setText(wrong);
                 countDie ++;
+                if ( countDie == 3) {
+                    youLose();
+                }
             }
         });
         answer3.setOnAction(event1 -> {
@@ -219,6 +223,9 @@ public class BearFindHoney extends GameController implements Initializable {
             } else {
                 ButtonKq.setText(wrong);
                 countDie ++;
+                if ( countDie == 3) {
+                    youLose();
+                }
             }
         });
         answer4.setOnAction(event1 -> {
@@ -228,6 +235,9 @@ public class BearFindHoney extends GameController implements Initializable {
             } else {
                 ButtonKq.setText(wrong);
                 countDie ++;
+                if ( countDie == 3) {
+                    youLose();
+                }
             }
         });
 
@@ -244,10 +254,11 @@ public class BearFindHoney extends GameController implements Initializable {
 
     public void loadQuestionToMap() {
         try {
-            double randomDouble = Math.random();
-            randomDouble = randomDouble * 6 + 1;
-            int count = (int) randomDouble;
             quest = Question.loadQuestion();
+            double randomDouble = Math.random();
+            randomDouble = randomDouble * (quest.size() - 1) + 1;
+            int count = (int) randomDouble;
+
 
 
             question.setText(quest.get(count).getQuestion());
@@ -306,8 +317,6 @@ public class BearFindHoney extends GameController implements Initializable {
         alert.setTitle("Thông báo");
         alert.setHeaderText(null);
         alert.setContentText("Bạn xứng đáng có 10 ny");
-
-
         alert.showAndWait();
     }
 }

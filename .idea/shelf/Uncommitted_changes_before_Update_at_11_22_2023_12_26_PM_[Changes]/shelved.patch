@@ -1,0 +1,235 @@
+Index: txt/question.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>This room__________since I was born.=has been painted=was painted=painted=has painted=has been painted\r\nWhat__________ you__________if you __________a billionaire? –I would take a trip into space.=will/do / are=would/do / were=can/do/was=shall/do / are=would/do / were\r\nHave you seen the Titanic yet? _ No, I haven’t. I__________it next Saturday.=would see=will see=am going to see=see=am going to see\r\nAfter__________dinner, I often watch TV.=ate=eat=eaten=eating=eating\r\nTom said that he __________his motorbike the day before.=had lost=lost=has lost=lose=had lost\r\nDo you believe__________God?=at=of=about=in=in\r\nAir and water are necessary__________us.=of=for=with=to=for
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/txt/question.txt b/txt/question.txt
+--- a/txt/question.txt	(revision a16948fde7bc38e20e91c1d0f999f082b545f75b)
++++ b/txt/question.txt	(date 1700630332665)
+@@ -4,4 +4,17 @@
+ After__________dinner, I often watch TV.=ate=eat=eaten=eating=eating
+ Tom said that he __________his motorbike the day before.=had lost=lost=has lost=lose=had lost
+ Do you believe__________God?=at=of=about=in=in
+-Air and water are necessary__________us.=of=for=with=to=for
+\ No newline at end of file
++Air and water are necessary__________us.=of=for=with=to=for
++"Just think, ______ 2 years' time, we'll be 20 both."=under=in=after=over
++It's said that he has ______ friends of his age.=few =plenty = a little =little
++The students ______ to be at school at 3 p.m. =told =have told = were told =  tell
++He bought all the books ______ are needed for the English course. =that = who = what = these
++The existence of many stars in the sky ______ us to suspect that there may be life on another planet. = have led = leads = lead = leading
++ ______, we couldn't go out because it rained. = Unfortunately= Fortunate = Fortunately = Unfortunate
++ The shirt in the window was ______ expensive for me to buy. = too = such = enough = so
++ He couldn't get back _____ his car. He had locked himself out. = on = into = in = to
++ Every member in Nataly's class admires her ______. = honesty = dishonest = dishonesty = honest
++ John never comes to class on time and ______. = neither does Peter = so does Peter =  so doesn't Peter = neither doesn't Peter
++ If I were in charge, I ______ things differently. = will do =  would do = would have done  = had done
++ He is going to get married ______ the end of this month. =  on = in = to = at
++ I am considering ______ my job. Can you recommend a good company? = to move =  moving = to change = changing
+\ No newline at end of file
+Index: src/main/java/com/app/dictionary/BearFindHoney.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.app.dictionary;\r\n\r\n\r\nimport com.app.dictionary.base.Question;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.SplitPane;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.input.KeyCode;\r\nimport javafx.scene.layout.AnchorPane;\r\nimport javafx.scene.text.Text;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.awt.*;\r\nimport java.io.IOException;\r\nimport java.net.URL;\r\nimport java.util.List;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class BearFindHoney extends GameController implements Initializable {\r\n    private final String correct = \"CORRECT\";\r\n    private final String wrong = \"WRONG\";\r\n    private int countDie = 0;\r\n\r\n    @FXML\r\n    protected AnchorPane anchorPane;\r\n    @FXML\r\n    private ImageView bear;\r\n\r\n    private double x;\r\n    private double y;\r\n    private List<Question> quest;\r\n    @FXML\r\n    private Button question;\r\n    @FXML\r\n    private Button answer1;\r\n    @FXML\r\n    private Button answer2;\r\n    @FXML\r\n    private Button answer3;\r\n    @FXML\r\n    private Button answer4;\r\n    @FXML\r\n    private Button ButtonKq;\r\n    @FXML\r\n    private ImageView imageWIN;\r\n    @FXML\r\n    private ImageView imageQuestion1, imageQuestion2, imageQuestion3, imageQuestion4,imageQuestion5,imageQuestion6;\r\n    final double[] rock = {400, 0, 400, 80, 240, 80, 240, 240, 80, 160, 0\r\n            , 160, 0, 320, 0, 400, 160, 400, 320, 480, 400, 320};\r\n    final double[] quesConst = {160, 80, 320, 160, 80, 320, 160, 320, 320, 400, 160, 480};\r\n    double [] ques  = new double[quesConst.length];\r\n\r\n    private double step = 80.0;\r\n\r\n    private final Image imgBear = new Image(getClass().getResourceAsStream(\"img/bear.png\"));\r\n    private final Image imgWin = new Image(getClass().getResourceAsStream(\"img/win.png\"));\r\n    private final Image imgPass = new Image(getClass().getResourceAsStream(\"img/pass.png\"));\r\n    private final Image imgQues = new Image(getClass().getResourceAsStream(\"img/q.png\"));\r\n\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n        load();\r\n        move();\r\n        hideToAll();\r\n    }\r\n\r\n    public void load() {\r\n\r\n        bear.setImage(imgBear);\r\n        imageQuestion1.setImage(imgQues);\r\n        imageQuestion2.setImage(imgQues);\r\n        imageQuestion3.setImage(imgQues);\r\n        imageQuestion4.setImage(imgQues);\r\n        imageQuestion5.setImage(imgQues);\r\n        imageQuestion6.setImage(imgQues);\r\n        for (int i = 0 ; i < quesConst.length; i++){\r\n            ques[i] = quesConst[i];\r\n        }\r\n    }\r\n\r\n    public void move() {\r\n\r\n        anchorPane.setOnKeyPressed(e -> {\r\n\r\n            KeyCode keyCode = e.getCode();\r\n            switch (keyCode) {\r\n                case W:\r\n                    y -= step;\r\n                    if (y < 0) y = 0;\r\n                    if (isRock(x, y)) {\r\n                        y += step;\r\n                    }\r\n                    break;\r\n\r\n                case S:\r\n                    y += step;\r\n                    if (y > 480) y = 480;\r\n                    if (isRock(x, y)) {\r\n                        y -= step;\r\n                    }\r\n\r\n                    break;\r\n                case A:\r\n                    x -= step;\r\n                    if (x < 0) {\r\n                        x = 0;\r\n                    }\r\n                    if (isRock(x, y)) {\r\n                        x += step;\r\n                    }\r\n                    break;\r\n                case D:\r\n                    x += step;\r\n                    if (x > 400) {\r\n                        x = 400;\r\n                    }\r\n                    if (isRock(x, y)) {\r\n                        x -= step;\r\n                    }\r\n\r\n                    break;\r\n                default:\r\n                    break;\r\n            }\r\n            bear.setLayoutX(x);\r\n            bear.setLayoutY(y);\r\n            if (isQuestion(x, y) != 0) {\r\n                turnOnToAll();\r\n                setStep(0);\r\n\r\n            }\r\n            if (ButtonKq.getText().equals(correct)) {\r\n                int tmp = isQuestion(x, y);\r\n                setPass(tmp);\r\n                ques[(tmp-1)*2] = -1;\r\n                ques[(tmp-1)*2 + 1] = -1;\r\n                setStep(80);\r\n                hideToAll();\r\n\r\n            }\r\n            if ( countDie == 3) {\r\n                youLose();\r\n            }\r\n            if (isWin()) {\r\n                youWin();\r\n            }\r\n        });\r\n        anchorPane.setFocusTraversable(true);\r\n    }\r\n\r\n    private void youLose() {\r\n        Alert alert = new Alert(Alert.AlertType.INFORMATION);\r\n        alert.setTitle(\"Game Over\");\r\n        alert.setHeaderText(null);\r\n        alert.setContentText(\"You Lose\");\r\n        alert.showAndWait();\r\n    }\r\n\r\n    public boolean isRock(double x, double y) {\r\n        double valX, valY;\r\n        for (int i = 0; i < rock.length; i += 2) {\r\n            valX = rock[i];\r\n            valY = rock[i + 1];\r\n            if (x == valX && y == valY) {\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public void left() {\r\n        bear.setLayoutX(x += 0);\r\n    }\r\n\r\n    public int  isQuestion(double x, double y) {\r\n        double valX, valY;\r\n        for (int i = 0; i < ques.length; i += 2) {\r\n            valX = ques[i];\r\n            valY = ques[i + 1];\r\n            if (x == valX && y == valY) {\r\n                return i / 2 + 1;\r\n            }\r\n        }\r\n        return 0;\r\n    }\r\n\r\n    public void checkButton(Question q) {\r\n        int ans = Question.trueAnswer(q);\r\n            answer1.setOnAction(event1 -> {\r\n                ButtonKq.setVisible(true);\r\n            if (ans == 1) {\r\n                ButtonKq.setText(correct);\r\n\r\n            } else {\r\n                ButtonKq.setText(wrong);\r\n                countDie ++;\r\n            }\r\n        });\r\n        answer2.setOnAction(event1 -> {\r\n            ButtonKq.setVisible(true);\r\n            if (ans == 2) {\r\n                ButtonKq.setText(correct);\r\n            } else {\r\n                ButtonKq.setText(wrong);\r\n                countDie ++;\r\n            }\r\n        });\r\n        answer3.setOnAction(event1 -> {\r\n            ButtonKq.setVisible(true);\r\n            if (ans == 3) {\r\n                ButtonKq.setText(correct);\r\n            } else {\r\n                ButtonKq.setText(wrong);\r\n                countDie ++;\r\n            }\r\n        });\r\n        answer4.setOnAction(event1 -> {\r\n            ButtonKq.setVisible(true);\r\n            if (ans == 4) {\r\n                ButtonKq.setText(correct);\r\n            } else {\r\n                ButtonKq.setText(wrong);\r\n                countDie ++;\r\n            }\r\n        });\r\n\r\n    }\r\n\r\n    public void turnOnToAll() {\r\n        question.setVisible(true);\r\n        answer1.setVisible(true);\r\n        answer2.setVisible(true);\r\n        answer3.setVisible(true);\r\n        answer4.setVisible(true);\r\n        loadQuestionToMap();\r\n    }\r\n\r\n    public void loadQuestionToMap() {\r\n        try {\r\n            double randomDouble = Math.random();\r\n            randomDouble = randomDouble * 6 + 1;\r\n            int count = (int) randomDouble;\r\n            quest = Question.loadQuestion();\r\n\r\n\r\n            question.setText(quest.get(count).getQuestion());\r\n            answer1.setText(quest.get(count).getAnswer1());\r\n            answer2.setText(quest.get(count).getAnswer2());\r\n            answer3.setText(quest.get(count).getAnswer3());\r\n            answer4.setText(quest.get(count).getAnswer4());\r\n\r\n            checkButton(quest.get(count));\r\n\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n\r\n    }\r\n\r\n    public void hideToAll() {\r\n        question.setVisible(false);\r\n        answer1.setVisible(false);\r\n        answer2.setVisible(false);\r\n        answer3.setVisible(false);\r\n        answer4.setVisible(false);\r\n        ButtonKq.setVisible(false);\r\n        ButtonKq.setText(\"Button\");\r\n    }\r\n\r\n    public boolean isWin() {\r\n        if (bear.getLayoutX() == 400 && bear.getLayoutY() == 480) return true;\r\n        return false;\r\n    }\r\n    public void setPass(int index) {\r\n        if ( index == 1) {\r\n            imageQuestion1.setImage(imgPass);\r\n        }\r\n        else if ( index  == 2) {\r\n            imageQuestion2.setImage(imgPass);\r\n        }\r\n        else if ( index  == 3) {\r\n            imageQuestion3.setImage(imgPass);\r\n        }\r\n        else if ( index  == 4) {\r\n            imageQuestion4.setImage(imgPass);\r\n        }\r\n        else if ( index  == 5) {\r\n            imageQuestion5.setImage(imgPass);\r\n        }\r\n        else if ( index  == 6) {\r\n            imageQuestion6.setImage(imgPass);\r\n        }\r\n    }\r\n    public void setStep(double step) {\r\n        this.step = step;\r\n    }\r\n    public void youWin() {\r\n        Alert alert = new Alert(Alert.AlertType.INFORMATION);\r\n        alert.setTitle(\"Thông báo\");\r\n        alert.setHeaderText(null);\r\n        alert.setContentText(\"Bạn xứng đáng có 10 ny\");\r\n\r\n\r\n        alert.showAndWait();\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/dictionary/BearFindHoney.java b/src/main/java/com/app/dictionary/BearFindHoney.java
+--- a/src/main/java/com/app/dictionary/BearFindHoney.java	(revision a16948fde7bc38e20e91c1d0f999f082b545f75b)
++++ b/src/main/java/com/app/dictionary/BearFindHoney.java	(date 1700630784613)
+@@ -137,17 +137,15 @@
+ 
+             }
+             if (ButtonKq.getText().equals(correct)) {
++                hideToAll();
+                 int tmp = isQuestion(x, y);
+                 setPass(tmp);
+                 ques[(tmp-1)*2] = -1;
+                 ques[(tmp-1)*2 + 1] = -1;
+                 setStep(80);
+-                hideToAll();
+ 
+             }
+-            if ( countDie == 3) {
+-                youLose();
+-            }
++
+             if (isWin()) {
+                 youWin();
+             }
+@@ -161,6 +159,7 @@
+         alert.setHeaderText(null);
+         alert.setContentText("You Lose");
+         alert.showAndWait();
++
+     }
+ 
+     public boolean isRock(double x, double y) {
+@@ -197,10 +196,12 @@
+                 ButtonKq.setVisible(true);
+             if (ans == 1) {
+                 ButtonKq.setText(correct);
+-
+             } else {
+                 ButtonKq.setText(wrong);
+                 countDie ++;
++                if ( countDie == 3) {
++                    youLose();
++                }
+             }
+         });
+         answer2.setOnAction(event1 -> {
+@@ -210,6 +211,9 @@
+             } else {
+                 ButtonKq.setText(wrong);
+                 countDie ++;
++                if ( countDie == 3) {
++                    youLose();
++                }
+             }
+         });
+         answer3.setOnAction(event1 -> {
+@@ -219,6 +223,9 @@
+             } else {
+                 ButtonKq.setText(wrong);
+                 countDie ++;
++                if ( countDie == 3) {
++                    youLose();
++                }
+             }
+         });
+         answer4.setOnAction(event1 -> {
+@@ -228,6 +235,9 @@
+             } else {
+                 ButtonKq.setText(wrong);
+                 countDie ++;
++                if ( countDie == 3) {
++                    youLose();
++                }
+             }
+         });
+ 
+@@ -244,10 +254,11 @@
+ 
+     public void loadQuestionToMap() {
+         try {
++            quest = Question.loadQuestion();
+             double randomDouble = Math.random();
+-            randomDouble = randomDouble * 6 + 1;
++            randomDouble = randomDouble * (quest.size() - 1) + 1;
+             int count = (int) randomDouble;
+-            quest = Question.loadQuestion();
++
+ 
+ 
+             question.setText(quest.get(count).getQuestion());
+@@ -306,8 +317,6 @@
+         alert.setTitle("Thông báo");
+         alert.setHeaderText(null);
+         alert.setContentText("Bạn xứng đáng có 10 ny");
+-
+-
+         alert.showAndWait();
+     }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"94d789a0-92a1-4946-ac5e-44e33a1151ad\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2023_5_53_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2023_5_53_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2023_6_37_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2023_6_37_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/media/audio.wav\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/media/audio.wav\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/app/dictionary/ApiController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/app/dictionary/ApiController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/app/dictionary/MainController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/app/dictionary/MainController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_AUTO_UPDATE\" value=\"true\" />\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"a62f9581-5147-4e15-bc93-f4980c2f2c9d\" />\r\n        <option name=\"url\" value=\"https://github.com/prindoll/dictionary.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2XEll1NdqODBGIhOSpBK8dtRYWM\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_directory_selection&quot;: &quot;C:/Users/admin/OneDrive - vnu.edu.vn/Desktop/BaiTapLon_/dictionary/src/main/java/com/app/dictionary&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Downloads/voicerss_tts_java/voicerss_tts.jar&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.JavaScript&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\admin\\OneDrive - vnu.edu.vn\\Desktop\\BaiTapLon_\\dictionary\\txt\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\admin\\OneDrive - vnu.edu.vn\\Desktop\\BaiTapLon_\\dictionary\\src\\main\\resources\\com\\app\\dictionary\\img\" />\r\n      <recent name=\"C:\\Users\\admin\\OneDrive - vnu.edu.vn\\Desktop\\BaiTapLon_\\dictionary\\src\\main\\resources\\com\\app\\dictionary\\fxml\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.app.dictionary.Main\" />\r\n      <module name=\"dictionary\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.app.dictionary.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Question\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.app.dictionary.base.Question\" />\r\n      <module name=\"dictionary\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.app.dictionary.base.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Question\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"94d789a0-92a1-4946-ac5e-44e33a1151ad\" name=\"Changes\" comment=\"\" />\r\n      <created>1698202266575</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1698202266575</updated>\r\n      <workItem from=\"1698202267561\" duration=\"1629000\" />\r\n      <workItem from=\"1698203913881\" duration=\"653000\" />\r\n      <workItem from=\"1698251134682\" duration=\"29000\" />\r\n      <workItem from=\"1698313320727\" duration=\"42000\" />\r\n      <workItem from=\"1698544647204\" duration=\"74000\" />\r\n      <workItem from=\"1698658536792\" duration=\"6676000\" />\r\n      <workItem from=\"1698764421334\" duration=\"232000\" />\r\n      <workItem from=\"1698768342015\" duration=\"3563000\" />\r\n      <workItem from=\"1698804465018\" duration=\"354000\" />\r\n      <workItem from=\"1698804844390\" duration=\"2389000\" />\r\n      <workItem from=\"1698823758891\" duration=\"595000\" />\r\n      <workItem from=\"1698849371934\" duration=\"701000\" />\r\n      <workItem from=\"1698851055383\" duration=\"2881000\" />\r\n      <workItem from=\"1698906328047\" duration=\"2106000\" />\r\n      <workItem from=\"1698912501643\" duration=\"30000\" />\r\n      <workItem from=\"1699271951791\" duration=\"5459000\" />\r\n      <workItem from=\"1699374215891\" duration=\"12000\" />\r\n      <workItem from=\"1699425351720\" duration=\"4972000\" />\r\n      <workItem from=\"1699517242088\" duration=\"6000\" />\r\n      <workItem from=\"1699549997608\" duration=\"3874000\" />\r\n      <workItem from=\"1699716749783\" duration=\"18000\" />\r\n      <workItem from=\"1699717291494\" duration=\"152000\" />\r\n      <workItem from=\"1699717471411\" duration=\"617000\" />\r\n      <workItem from=\"1699718137279\" duration=\"1662000\" />\r\n      <workItem from=\"1699720571927\" duration=\"682000\" />\r\n      <workItem from=\"1699772380935\" duration=\"3482000\" />\r\n      <workItem from=\"1699969027257\" duration=\"14000\" />\r\n      <workItem from=\"1699973785370\" duration=\"3421000\" />\r\n      <workItem from=\"1700013516997\" duration=\"613000\" />\r\n      <workItem from=\"1700117103081\" duration=\"2739000\" />\r\n      <workItem from=\"1700121465441\" duration=\"70000\" />\r\n      <workItem from=\"1700123854702\" duration=\"886000\" />\r\n      <workItem from=\"1700145952938\" duration=\"4887000\" />\r\n      <workItem from=\"1700151471834\" duration=\"1545000\" />\r\n      <workItem from=\"1700182441130\" duration=\"2886000\" />\r\n      <workItem from=\"1700185385841\" duration=\"2526000\" />\r\n      <workItem from=\"1700188256123\" duration=\"540000\" />\r\n      <workItem from=\"1700200786020\" duration=\"181000\" />\r\n      <workItem from=\"1700234315058\" duration=\"124000\" />\r\n      <workItem from=\"1700234537266\" duration=\"22000\" />\r\n      <workItem from=\"1700234737062\" duration=\"513000\" />\r\n      <workItem from=\"1700316888828\" duration=\"633000\" />\r\n      <workItem from=\"1700317972830\" duration=\"512000\" />\r\n      <workItem from=\"1700320829403\" duration=\"266000\" />\r\n      <workItem from=\"1700321225972\" duration=\"3252000\" />\r\n      <workItem from=\"1700324500310\" duration=\"2056000\" />\r\n      <workItem from=\"1700384224606\" duration=\"3430000\" />\r\n      <workItem from=\"1700406593465\" duration=\"806000\" />\r\n      <workItem from=\"1700407481212\" duration=\"579000\" />\r\n      <workItem from=\"1700445902821\" duration=\"1078000\" />\r\n      <workItem from=\"1700467853734\" duration=\"1093000\" />\r\n      <workItem from=\"1700489922000\" duration=\"2702000\" />\r\n      <workItem from=\"1700492929471\" duration=\"187000\" />\r\n      <workItem from=\"1700562588247\" duration=\"2572000\" />\r\n      <workItem from=\"1700566038600\" duration=\"328000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700564578847</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700564578847</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml&#10;\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml\" />\r\n    <option name=\"GROUP_MULTIFILE_MERGE_BY_DIRECTORY\" value=\"true\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a16948fde7bc38e20e91c1d0f999f082b545f75b)
++++ b/.idea/workspace.xml	(date 1700630784902)
+@@ -5,14 +5,15 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/Introduce.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/Introduce.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_22_2023_07_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_22_2023_07_26__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2023_5_53_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2023_5_53_PM__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2023_6_37_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2023_6_37_PM__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/media/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/media/audio.wav" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/ApiController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/MainController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BearFindHoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BearFindHoney.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/txt/question.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt/question.txt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -30,7 +31,6 @@
+   <component name="Git.Settings">
+     <option name="PUSH_AUTO_UPDATE" value="true" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+   &quot;lastFilter&quot;: {
+@@ -40,7 +40,7 @@
+     <option name="selectedUrlAndAccountId">
+       <UrlAndAccount>
+         <option name="accountId" value="a62f9581-5147-4e15-bc93-f4980c2f2c9d" />
+-        <option name="url" value="https://github.com/prindoll/dictionary.git" />
++        <option name="url" value="https://github.com/prindoll/dictionary" />
+       </UrlAndAccount>
+     </option>
+   </component>
+@@ -186,6 +186,8 @@
+       <workItem from="1700492929471" duration="187000" />
+       <workItem from="1700562588247" duration="2572000" />
+       <workItem from="1700566038600" duration="328000" />
++      <workItem from="1700620764825" duration="338000" />
++      <workItem from="1700628836452" duration="1945000" />
+     </task>
+     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
+       <option name="closed" value="true" />
+Index: src/main/java/com/app/dictionary/Introduce.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/app/dictionary/Introduce.java b/src/main/java/com/app/dictionary/Introduce.java
+new file mode 100644
+--- /dev/null	(date 1700617753170)
++++ b/src/main/java/com/app/dictionary/Introduce.java	(date 1700617753170)
+@@ -0,0 +1,7 @@
++package com.app.dictionary;
++
++public class Introduce {
++    public static void main(String[] args) {
++        System.out.println("Hello World!");
++    }
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_20\" default=\"true\" project-jdk-name=\"20\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision a16948fde7bc38e20e91c1d0f999f082b545f75b)
++++ b/.idea/misc.xml	(date 1700620754817)
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="MavenProjectsManager">
+@@ -8,5 +7,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="20" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="20" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+diff --git a/src/main/resources/com/app/dictionary/fxml/Introduce.fxml b/src/main/resources/com/app/dictionary/fxml/Introduce.fxml
+new file mode 100644
