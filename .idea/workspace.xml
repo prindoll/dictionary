@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d789a0-92a1-4946-ac5e-44e33a1151ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/Hangman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/hangman.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/hangman.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2023_5_53_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2023_5_53_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2023_6_37_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_11_2023_6_37_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/audio.wav" beforeDir="false" afterPath="$PROJECT_DIR$/media/audio.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/ApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/BookmarkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/dictionary/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/dictionary/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/dictionary/fxml/bookmark.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,13 +185,7 @@
       <workItem from="1700489922000" duration="2702000" />
       <workItem from="1700492929471" duration="187000" />
       <workItem from="1700562588247" duration="2572000" />
-      <workItem from="1700566916055" duration="50000" />
-      <workItem from="1700567010842" duration="171000" />
-      <workItem from="1700567417993" duration="404000" />
-      <workItem from="1700567948910" duration="1029000" />
-      <workItem from="1700569926462" duration="146000" />
-      <workItem from="1700570263659" duration="755000" />
-      <workItem from="1700571053191" duration="2334000" />
+      <workItem from="1700566038600" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
       <option name="closed" value="true" />
@@ -195,63 +195,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700564578847</updated>
     </task>
-    <task id="LOCAL-00002" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
-      <option name="closed" value="true" />
-      <created>1700566807989</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1700566807989</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
-      <option name="closed" value="true" />
-      <created>1700566936803</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1700566936803</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
-      <option name="closed" value="true" />
-      <created>1700567168777</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1700567168777</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
-      <option name="closed" value="true" />
-      <created>1700569994549</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1700569994549</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
-      <option name="closed" value="true" />
-      <created>1700570060471</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1700570060471</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
-      <option name="closed" value="true" />
-      <created>1700573037775</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1700573037775</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/app/dictionary/BearFindHoney.java&#10;#&#9;src/main/resources/com/app/dictionary/fxml/BearFindHoney.fxml">
-      <option name="closed" value="true" />
-      <created>1700573043764</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1700573043764</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

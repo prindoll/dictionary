@@ -1,14 +1,12 @@
 package com.app.dictionary;
 
-import com.app.dictionary.base.AddWordToTxt;
-import com.app.dictionary.base.DeleteWordToTxt;
-import com.app.dictionary.base.Dictionary;
-import com.app.dictionary.base.Word;
+import com.app.dictionary.base.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
 
@@ -31,10 +29,15 @@ public class BookmarkController implements Initializable {
     private ListView<String> bookmarkList;
 
     @FXML
+    private ImageView speakerImage;
+    @FXML
     private WebView bookmarkWebView;
 
     @FXML
     private Button deleteButton;
+
+
+
     String[] choicesBookmark = {"English", "Vietnamese"};
 
     private Map<String, Word> bookmarkEngLish = new HashMap<String, Word>();
@@ -52,6 +55,7 @@ public class BookmarkController implements Initializable {
         setBookmark();
         showBookmarks();
         setFont();
+        speakerWord();
     }
     public void updateBookmark() {
         loadBookmarks();
@@ -183,4 +187,26 @@ public class BookmarkController implements Initializable {
             alert.close();
         }
     }
+    private void speakerWord() {
+        speakerImage.setOnMouseClicked(event -> {
+            if(status) {
+                Voicerss.Name = "Linda";
+                Voicerss.language = "en-us";
+                try {
+                    Voicerss.speakWord(bookmarkLabel.getText());
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                Voicerss.Name = "Chi";
+                Voicerss.language = "vi-vn";
+                try {
+                    Voicerss.speakWord(bookmarkLabel.getText());
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
 }

@@ -87,48 +87,38 @@ public class MainController implements Initializable {
         TranslateTransition slide = new TranslateTransition();
         slide.setDuration(Duration.seconds(0.5));
         slide.setNode(sidebar);
-
-        double targetTranslateX = 0;
-        if (sidebar.getTranslateX() == 0) {
-            targetTranslateX = -200;
-        }
-
-        slide.setToX(targetTranslateX);
+        slide.setToX(0);
+        TranslateTransition slide2 = new TranslateTransition();
+        slide2.setDuration(Duration.seconds(0.5));
+        slide2.setNode(center);
+        slide2.setToX(0);
         slide.play();
-
+        slide2.play();
+        sidebar.setTranslateX(-200);
+        center.setTranslateX(-100);
         slide.setOnFinished((ActionEvent event) -> {
-            button.setVisible(sidebar.getTranslateX() == 0);
-            buttonClose.setVisible(sidebar.getTranslateX() != 0);
+            button.setVisible(false);
+            buttonClose.setVisible(true);
         });
     }
     public void translateTransitionSideBar2(ActionEvent e) {
         TranslateTransition slide = new TranslateTransition();
         slide.setDuration(Duration.seconds(0.5));
         slide.setNode(sidebar);
-
-        double targetTranslateX = -200;
-        if (sidebar.getTranslateX() == targetTranslateX) {
-            targetTranslateX = 0;
-        }
-
-        slide.setToX(targetTranslateX);
-        slide.play();
-
+        slide.setToX(-200);
         TranslateTransition slide2 = new TranslateTransition();
         slide2.setDuration(Duration.seconds(0.5));
         slide2.setNode(center);
-
-        double targetTranslateX2 = -100;
-        if (center.getTranslateX() == targetTranslateX2) {
-            targetTranslateX2 = 0;
-        }
-
-        slide2.setToX(targetTranslateX2);
+        slide2.setToX(-100);
+        slide.play();
         slide2.play();
 
+        sidebar.setTranslateX(0);
+        center.setTranslateX(0);
+
         slide.setOnFinished((ActionEvent event) -> {
-            button.setVisible(sidebar.getTranslateX() == 0);
-            buttonClose.setVisible(sidebar.getTranslateX() != 0);
+            button.setVisible(true);
+            buttonClose.setVisible(false);
         });
     }
 

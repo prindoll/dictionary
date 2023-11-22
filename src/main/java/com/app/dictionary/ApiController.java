@@ -69,7 +69,6 @@ public class ApiController extends MainController implements Initializable {
         }
     }
     public void speak1() {
-        Voicerss.speed = 1.5;
         Voicerss.Name = vo1;
         Voicerss.language = str1;
         try {
